@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
 
 import { styled } from '@mui/material/styles';
 
@@ -26,7 +27,7 @@ export default function HeroBox() {
   return (
     <Hero maxWidth={'sm'}>
       <h1>Your Once-in-a-Lifetime Tropical Island Boat Expedition Awaits!</h1>
-      <Button variant='contained' sx={{backgroundColor: '#ff785e'}}>Start your Journey</Button>
+      <Link href="#services-section"><Button variant='contained' sx={{backgroundColor: '#ff785e'}}>Start your Journey</Button></Link>
     </Hero>
   );
 }

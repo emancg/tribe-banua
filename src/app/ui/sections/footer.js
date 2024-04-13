@@ -42,7 +42,7 @@ export default function Footer() {
                         <LanguageIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p>www.islandtours.com</p></Link>
+                        <Link href="https://google.com"><p >www.islandtours.com</p></Link>
                     </Grid>
                 </Grid>
                 <Grid container columns={12} columnSpacing={1}>
