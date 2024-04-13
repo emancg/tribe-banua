@@ -13,7 +13,7 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     ...theme.typography.body2,
     textAlign: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
     paddingBottom: 30,
     color: 'black',
 }));

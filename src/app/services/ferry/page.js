@@ -76,7 +76,7 @@ export default function ExpeditionsPage() {
                 </SimpleContainer> */}
             <SimpleContainer>
                 <PageBox maxWidth='sm'>
-                    <h1>EXPEDITIONS</h1>
+                    <h1>FERRY TRANSFER</h1>
                     {/* <Box position={'relative'} height={'100%'} sx={{width: '90%', boxShadow: '10px 10px 10px black'}}>
                             <Image
                                 fill
@@ -85,15 +85,14 @@ export default function ExpeditionsPage() {
                             />
                         </Box> */}
 
-                    <h2>What is the Tribe Banua Expedition?</h2>
-                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, where you'll be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks, exploring hidden lagoons and tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan's culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
+                    <p><strong>Route:</strong> Offering seamless transit between Coron and El Nido (vice versa)</p>
+                    <p><strong>Price:</strong> Avail this service at a rate of 3,224 PHP per person (rates are subject to change upon booking).</p>
+                    <p><strong>Departure from Coron:</strong> Available daily from 8 AM to 9 AM.</p>
+                    <p><strong>Departure from El Nido:</strong> Available daily from 12 PM to 1 PM.</p>
+                    <p><strong>Travel Time:</strong> Expect a comfortable 3-hour journey through scenic vistas and tranquil waters.</p>
                     <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
 
-                    <h2>What to expect from this grand tour?</h2>
-                    <p></p>
-                    <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
-
-                    <h2>Are you ready for the tour of a lifetime?</h2>
+                    <h2>Ready for the journey?</h2>
                     <p>If you are, send us a message or connect with us thru our social accounts below.</p>
                     {/* <Divider sx={{borderColor:'white', width: '25%'}}></Divider> */}
 

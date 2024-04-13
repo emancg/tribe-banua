@@ -10,7 +10,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Divider from '@mui/material/Divider';
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: 'rgba(255, 255, 255, 0.4)',
+  backgroundColor: 'rgba(255, 255, 255, 0.6)',
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',

@@ -19,7 +19,7 @@ import Link from 'next/link';
 
 const pages = ['Home', 'Services', 'Why Choose Us', 'Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const pageUrl = ['/', '#services-section', '#whychooseus-section', '#contactus-section'];
+const pageUrl = ['/', '/#services-section', '/#whychooseus-section', '/#contactus-section'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

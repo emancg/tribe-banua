@@ -76,7 +76,7 @@ export default function ExpeditionsPage() {
                 </SimpleContainer> */}
             <SimpleContainer>
                 <PageBox maxWidth='sm'>
-                    <h1>EXPEDITIONS</h1>
+                    <h1>VAN TRANSFER</h1>
                     {/* <Box position={'relative'} height={'100%'} sx={{width: '90%', boxShadow: '10px 10px 10px black'}}>
                             <Image
                                 fill
@@ -85,15 +85,12 @@ export default function ExpeditionsPage() {
                             />
                         </Box> */}
 
-                    <h2>What is the Tribe Banua Expedition?</h2>
-                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, where you'll be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks, exploring hidden lagoons and tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan's culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
+                    <p><strong>Route:</strong> Seamless transit between Puerto Princesa City and El Nido (vice versa) at a rate of 650 PHP per person</p>
+                    <p><strong>Availability:</strong> From 4 am to 7 pm for pickup and dropoff, with airport pickup available</p>
+                    <p><strong>Travel Time:</strong> Anticipate a travel duration of 5 to 6 hours</p>
                     <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
 
-                    <h2>What to expect from this grand tour?</h2>
-                    <p></p>
-                    <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
-
-                    <h2>Are you ready for the tour of a lifetime?</h2>
+                    <h2>Ready for the trip?</h2>
                     <p>If you are, send us a message or connect with us thru our social accounts below.</p>
                     {/* <Divider sx={{borderColor:'white', width: '25%'}}></Divider> */}
 

@@ -35,7 +35,7 @@ export default function Home() {
         </SimpleContainer>
 
         <SimpleContainer sx={{ height: '100vh' }}>
-          <WhyChooseUs id="whychooseus-section"/>
+          <WhyChooseUs/>
         </SimpleContainer>
 
         <SimpleContainer sx={{ height: '100vh' }}>
