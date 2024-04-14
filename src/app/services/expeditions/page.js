@@ -94,7 +94,7 @@ export default function ExpeditionsPage() {
                         </Box> */}
 
                     <h3>What is the Tribe Banua Expedition?</h3>
-                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks, exploring hidden lagoons and tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan&apos;s culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
+                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks and explore tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan&apos;s culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
                     <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
 
                     <h3>What to expect from this grand tour?</h3>
