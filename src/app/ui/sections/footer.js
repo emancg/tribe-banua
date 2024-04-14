@@ -12,6 +12,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from 'next/link';
+import StyledLink from '../layout/link';
 
 
 const FooterBox = styled(Box)(({ theme }) => ({
@@ -42,7 +43,7 @@ export default function Footer() {
                         <LanguageIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p >www.islandtours.com</p></Link>
+                        <StyledLink linkRef="https://google.com"><p >www.tribebanuaexpeditions.com</p></StyledLink>
                     </Grid>
                 </Grid>
                 <Grid container columns={12} columnSpacing={1}>
@@ -50,7 +51,7 @@ export default function Footer() {
                         <FacebookIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p>@facebook_page</p></Link>
+                        <StyledLink linkRef="https://google.com"><p>@facebook_page</p></StyledLink>
                     </Grid>
                 </Grid>
                 <Grid container columns={12} columnSpacing={1}>
@@ -58,7 +59,7 @@ export default function Footer() {
                         <InstagramIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p>@instagram_page</p></Link>
+                        <StyledLink linkRef="https://google.com"><p>@instagram_page</p></StyledLink>
                     </Grid>
                 </Grid>
                 <Grid container columns={12} columnSpacing={1}>
@@ -66,7 +67,7 @@ export default function Footer() {
                         <PhoneIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p>+63 9XX-XXX-XXXX</p></Link>
+                        <StyledLink linkRef="https://google.com"><p>+63 9XX-XXX-XXXX</p></StyledLink>
                     </Grid>
                 </Grid>
                 <Grid container columns={12} columnSpacing={1}>
@@ -74,7 +75,7 @@ export default function Footer() {
                         <EmailIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
-                        <Link href="https://google.com"><p>islandtours@gmail.com</p></Link>
+                        <StyledLink linkRef="https://google.com"><p>tribebanuaexpeditions@gmail.com</p></StyledLink>
                     </Grid>
                 </Grid>
             </Stack>

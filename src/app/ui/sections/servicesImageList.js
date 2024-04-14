@@ -9,8 +9,10 @@ import Box from '@mui/material/Box';
 import SimpleStack from '../layout/stack';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
+import linkStyles from '../../styles/Link.module.css';
 
 import Link from 'next/link';
+import StyledLink from '../layout/link';
 
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -59,40 +61,42 @@ const ItemBox = styled(Paper)(({ theme }) => ({
   backgroundColor: 'rgba(0, 0, 0, 0.5)',
   backgroundBlendMode: 'darken',
   // borderLeft: '6px solid gray',
-  boxShadow: '-2px 2px gray'
+  boxShadow: '-2px 2px gray',
+  textDecoration: 'none',
 }));
 
 export default function ServicesImageList() {
+  console.log(linkStyles.link);
   return (
     <SimpleBox maxWidth={'sm'} id="services-section">
 
       <h1>OUR SERVICES</h1>
       <SimpleStack>
-        <Link href='/services/expeditions'>
-          <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./expeditions.jpg')` }}>
-            <h2>EXPEDITIONS</h2>
-          </ItemBox>
-        </Link>
+        <StyledLink linkRef='/services/expeditions'>
+        <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./expeditions.jpg')` }}>
+          <h2>EXPEDITIONS</h2>
+        </ItemBox>
+      </StyledLink>
 
-        <Link href='/services/island-tours'>
-          <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./island-tours.jpg')` }}>
-            <h2>ISLAND TOURS</h2>
-          </ItemBox>
-        </Link>
+      <StyledLink linkRef='/services/island-tours'>
+        <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./island-tours.jpg')` }}>
+          <h2>ISLAND TOURS</h2>
+        </ItemBox>
+      </StyledLink>
 
-        <Link href='/services/ferry'>
-          <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./ferry-transfer.jpg')` }}>
-            <h2>FERRY TRANSFER</h2>
-          </ItemBox>
-        </Link>
+      <StyledLink linkRef='/services/ferry'>
+        <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./ferry-transfer.jpg')` }}>
+          <h2>FERRY TRANSFER</h2>
+        </ItemBox>
+      </StyledLink>
 
-        <Link href='/services/van'>
-          <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./van-transfer.jpg')` }}>
-            <h2>VAN TRANSFER</h2>
-          </ItemBox>
-        </Link>
-      </SimpleStack>
-    </SimpleBox>
+      <StyledLink linkRef='/services/van'>
+        <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('./van-transfer.jpg')` }}>
+          <h2>VAN TRANSFER</h2>
+        </ItemBox>
+      </StyledLink>
+    </SimpleStack>
+    </SimpleBox >
   );
 }
 

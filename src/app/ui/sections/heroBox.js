@@ -17,7 +17,7 @@ const Hero = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   backgroundPosition: 'center',
   justifyContent: 'end',
-  color: '#ffc345',
+  color: '#F9EA9A',
   textShadow: '2px 2px 5px black',
   paddingBottom: 100,
 }));
@@ -27,7 +27,7 @@ export default function HeroBox() {
   return (
     <Hero maxWidth={'sm'}>
       <h1>Your Once-in-a-Lifetime Tropical Island Boat Expedition Awaits!</h1>
-      <Link href="#services-section"><Button variant='contained' sx={{backgroundColor: '#ff785e'}}>Start your Journey</Button></Link>
+      <Link href="#services-section"><Button variant='contained' sx={{backgroundColor: '#DE6B48'}}>Start your Journey</Button></Link>
     </Hero>
   );
 }

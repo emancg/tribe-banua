@@ -19,7 +19,7 @@ const PageContainer = styled(Container)(({ theme }) => ({
   backgroundBlendMode:'darken',
   backgroundColor: '#214675',
   backgroundSize: 'cover',
-  padding: 0
+  padding: 0,
 }));
 
 

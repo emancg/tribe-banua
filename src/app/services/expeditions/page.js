@@ -12,6 +12,7 @@ import FeaturedItems from '@/app/ui/layout/featured';
 import Paper from '@mui/material/Paper';
 import SimpleStack from '@/app/ui/layout/stack';
 import Link from 'next/link';
+import StyledLink from '@/app/ui/layout/link';
 import Button from '@mui/material/Button';
 
 const PageContainer = styled(Container)(({ theme }) => ({
@@ -23,6 +24,7 @@ const PageContainer = styled(Container)(({ theme }) => ({
     backgroundColor: '#614e72',
     backgroundSize: 'cover',
     paddingTop: 60,
+    color: '#F9EA9A'
 }));
 
 const PageBox = styled(Box)(({ theme }) => ({
@@ -92,7 +94,7 @@ export default function ExpeditionsPage() {
                         </Box> */}
 
                     <h3>What is the Tribe Banua Expedition?</h3>
-                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks, exploring hidden lagoons and tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan's culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
+                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks, exploring hidden lagoons and tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan&apos;s culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
                     <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
 
                     <h3>What to expect from this grand tour?</h3>
@@ -168,21 +170,21 @@ export default function ExpeditionsPage() {
                                 <h2>EXPEDITIONS</h2>
                             </ItemBox>
                         </Link> */}
-                        <Link href='/services/island-tours'>
+                        <StyledLink linkRef='/services/island-tours'>
                             <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../island-tours.jpg')` }}>
                                 <h2>ISLAND TOURS</h2>
                             </ItemBox>
-                        </Link>
-                        <Link href='/services/ferry'>
+                        </StyledLink>
+                        <StyledLink linkRef='/services/ferry'>
                             <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../ferry-transfer.jpg')` }}>
                                 <h2>FERRY TRANSFER</h2>
                             </ItemBox>
-                        </Link>
-                        <Link href='/services/van'>
+                        </StyledLink>
+                        <StyledLink linkRef='/services/van'>
                             <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../van-transfer.jpg')` }}>
                                 <h2>VAN TRANSFER</h2>
                             </ItemBox>
-                        </Link>
+                        </StyledLink>
                     </SimpleStack>
                 </PageBox>
             </SimpleContainer>

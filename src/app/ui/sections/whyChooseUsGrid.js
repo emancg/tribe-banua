@@ -24,7 +24,7 @@ const WhyChooseUsBox = styled(Box)(({ theme }) => ({
   flexGrow: 1,
   justifyContent: 'center',
   textAlign: 'center',
-  height: '100vh',
+  height: 'auto',
   color: 'white'
 
 }));
@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
       <Grid container>
         {itemData.map((item) => (
           <Grid item xs={6} sm={6} key={itemData.indexOf(item)}>
-            <Item variant="elevation" elevation={16} >
+            <Item variant="elevation" elevation={16} key={itemData.indexOf(item)}>
               <h3>{item.title}</h3>
               {itemIcons[itemData.indexOf(item)]}
               <p>{item.subtitle}</p>
@@ -50,10 +50,10 @@ export default function WhyChooseUs() {
 }
 
 const itemIcons = [
-  <SailingIcon fontSize='large' color='primary' />,
-  <Groups3Icon fontSize='large' color='secondary' />,
-  <VerifiedUserIcon fontSize='large' sx={{ color: 'green' }} />,
-  <AutoAwesomeIcon fontSize='large' sx={{ color: 'gold' }} />
+  <SailingIcon fontSize='large' color='primary' key={0}/>,
+  <Groups3Icon fontSize='large' color='secondary' key={1}/>,
+  <VerifiedUserIcon fontSize='large' sx={{ color: 'green' }}  key={2}/>,
+  <AutoAwesomeIcon fontSize='large' sx={{ color: 'gold' }} key={3}/>
 
 ]
 

@@ -41,7 +41,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: '#214675' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: '#233D4D', color: '#F9EA9A' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <SailingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -88,8 +88,11 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none'},
               }}
             >
               {pages.map((page) => (
@@ -125,7 +128,7 @@ function ResponsiveAppBar() {
               <Link href={pageUrl[pages.indexOf(page)]} key={page}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: '#F9EA9A', display: 'block' }}
                 >
                   {page}
                 </Button>
