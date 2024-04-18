@@ -10,7 +10,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Divider from '@mui/material/Divider';
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: 'rgba(255, 255, 255, 0.6)',
+  backgroundColor: 'rgba(255, 255, 255, 0.7)',
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',
@@ -25,7 +25,10 @@ const WhyChooseUsBox = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   textAlign: 'center',
   height: 'auto',
-  color: 'white'
+  color: 'white',
+  h2: {
+    textShadow: '5px 5px 5px black',
+  }
 
 }));
 

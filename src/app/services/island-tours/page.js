@@ -14,6 +14,7 @@ import SimpleStack from '@/app/ui/layout/stack';
 import Link from 'next/link';
 import StyledLink from '@/app/ui/layout/link';
 import Button from '@mui/material/Button';
+import ServicesStack from '@/app/ui/layout/stack';
 
 const PageContainer = styled(Container)(({ theme }) => ({
     padding: 0,
@@ -21,7 +22,9 @@ const PageContainer = styled(Container)(({ theme }) => ({
     justifyContent: 'center',
     backgroundImage: `url('../../island-tours.jpg')`,
     backgroundBlendMode: 'darken',
-    backgroundColor: '#614e72',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    // backgroundColor: '#614e72',
+    backgroundPositionX: 'center',
     backgroundSize: 'cover',
     paddingTop: 60,
 }));
@@ -98,7 +101,7 @@ export default function IslandToursPage() {
                     <p>Embark on an unforgettable journey through Tour A's captivating destinations, including Big Lagoon, Secret Lagoon, Shimizu Island, and Seven Commando Beach.</p>
                     {/* <p>At midday, we'll make a delightful stop on an island for a satisfying meal. Our crew will serve up a mouthwatering grill, featuring your choice of fish, chicken, or pork, accompanied by rice and fresh fruits for dessert.</p>
                     <p>Feel free to bring along your preferred beverages, whether soft drinks or alcohol. However, rest assured, we'll also provide an ample supply of drinking water for your convenience.</p> */}
-                    
+
 
                     <h4>Tour B</h4>
                     <p>Tour B promises an enthralling adventure with its array of attractions. From pristine white sand beaches to exhilarating snorkeling spots, and even a fascinating cave exploration, this tour offers something for everyone. Don't miss the chance to discover a remarkable sandbar nestled amidst the sea's embrace.</p>
@@ -133,28 +136,7 @@ export default function IslandToursPage() {
             <SimpleContainer>
                 <PageBox maxWidth='sm' sx={{ textAlign: 'center', paddingTop: '0', justifyContent: 'start' }}>
                     <h2>SEE MORE OF OUR SERVICES</h2>
-                    <SimpleStack>
-                        <StyledLink linkRef='/services/expeditions'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../expeditions.jpg')` }}>
-                                <h2>EXPEDITIONS</h2>
-                            </ItemBox>
-                        </StyledLink>
-                        {/* <Link href='/services/island-tours'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../island-tours.jpg')` }}>
-                                <h2>ISLAND TOURS</h2>
-                            </ItemBox>\
-                        </Link> */}
-                        <StyledLink linkRef='/services/ferry'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../ferry-transfer.jpg')` }}>
-                                <h2>FERRY TRANSFER</h2>
-                            </ItemBox>
-                        </StyledLink>
-                        <StyledLink linkRef='/services/van'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../van-transfer.jpg')` }}>
-                                <h2>VAN TRANSFER</h2>
-                            </ItemBox>
-                        </StyledLink>
-                    </SimpleStack>
+                    <ServicesStack hiddenItem={1} />
                 </PageBox>
             </SimpleContainer>
         </PageContainer>

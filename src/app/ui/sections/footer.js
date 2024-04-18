@@ -29,23 +29,25 @@ const FooterBox = styled(Box)(({ theme }) => ({
     p: {
         marginTop: 7,
         color: 'white',
-    }
+    },
+    textShadow: '5px 5px 5px black',
+
 }));
 
 export default function Footer() {
     return (
         <FooterBox maxWidth={'sm'}>
-            <h2>VISIT OUR SOCIALS</h2>
-            <Stack direction="column" spacing={2} margin={1} sx={{textAlign: 'left'}}>
+            <h2>CONTACT US</h2>
+            <Stack direction="column" spacing={2} margin={1} sx={{ textAlign: 'left' }}>
 
-                <Grid container columns={12} columnSpacing={1}>
+                {/* <Grid container columns={12} columnSpacing={1}>
                     <Grid item xs={2} sm={1}>
                         <LanguageIcon fontSize='large' />
                     </Grid>
                     <Grid item xs={10}>
                         <StyledLink linkRef="https://google.com"><p >www.tribebanuaexpeditions.com</p></StyledLink>
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid container columns={12} columnSpacing={1}>
                     <Grid item xs={2} sm={1}>
                         <FacebookIcon fontSize='large' />

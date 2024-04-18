@@ -16,6 +16,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import SailingIcon from '@mui/icons-material/Sailing';
 import Link from 'next/link';
+import theme from '../../theme';
+import StyledLink from '../layout/link';
 
 const pages = ['Home', 'Services', 'Why Choose Us', 'Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -41,7 +43,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: '#233D4D', color: '#F9EA9A' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: theme.palette.primary, color: 'white' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <SailingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -75,6 +77,7 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
             <Menu
+             color="primaryLight"
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -96,11 +99,11 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <Link href={pageUrl[pages.indexOf(page)]} key={page}>
+                <StyledLink linkRef={pageUrl[pages.indexOf(page)]} key={page}>
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center" color='primary'>{page}</Typography>
                   </MenuItem>
-                </Link>
+                </StyledLink>
               ))}
             </Menu>
           </Box>
@@ -125,14 +128,14 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link href={pageUrl[pages.indexOf(page)]} key={page}>
+              <StyledLink linkRef={pageUrl[pages.indexOf(page)]} key={page}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: '#F9EA9A', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                   {page}
                 </Button>
-              </Link>
+              </StyledLink>
             ))}
           </Box>
 

@@ -14,14 +14,15 @@ import SimpleStack from '@/app/ui/layout/stack';
 import Link from 'next/link';
 import StyledLink from '@/app/ui/layout/link';
 import Button from '@mui/material/Button';
+import ServicesStack from '@/app/ui/layout/stack';
 
 const PageContainer = styled(Container)(({ theme }) => ({
     padding: 0,
     width: '100%',
     justifyContent: 'center',
-    backgroundImage: `url('../../expeditions.jpg')`,
-    backgroundBlendMode: 'darken',
-    backgroundColor: '#614e72',
+    backgroundImage: `url('../../expeditions-bg.jpg')`,
+    // backgroundBlendMode: 'darken',
+    // backgroundColor: '#614e72',
     backgroundSize: 'cover',
     paddingTop: 60,
     color: '#F9EA9A'
@@ -164,28 +165,7 @@ export default function ExpeditionsPage() {
             <SimpleContainer>
                 <PageBox maxWidth='sm' sx={{ textAlign: 'center', paddingTop: '0', justifyContent: 'start' }}>
                     <h2>SEE MORE OF OUR SERVICES</h2>
-                    <SimpleStack>
-                        {/* <Link href='/pages/services/expeditions'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../expeditions.jpg')` }}>
-                                <h2>EXPEDITIONS</h2>
-                            </ItemBox>
-                        </Link> */}
-                        <StyledLink linkRef='/services/island-tours'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../island-tours.jpg')` }}>
-                                <h2>ISLAND TOURS</h2>
-                            </ItemBox>
-                        </StyledLink>
-                        <StyledLink linkRef='/services/ferry'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../ferry-transfer.jpg')` }}>
-                                <h2>FERRY TRANSFER</h2>
-                            </ItemBox>
-                        </StyledLink>
-                        <StyledLink linkRef='/services/van'>
-                            <ItemBox variant='elevation' elevation={16} sx={{ backgroundImage: `url('../../van-transfer.jpg')` }}>
-                                <h2>VAN TRANSFER</h2>
-                            </ItemBox>
-                        </StyledLink>
-                    </SimpleStack>
+                        <ServicesStack hiddenItem={0} />
                 </PageBox>
             </SimpleContainer>
         </PageContainer>

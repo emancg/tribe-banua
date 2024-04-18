@@ -13,7 +13,7 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     ...theme.typography.body2,
     textAlign: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     paddingBottom: 30,
     color: 'black',
 }));
@@ -29,7 +29,7 @@ export default function ContactUs() {
         <ContactBox maxWidth={'sm'} id="contactus-section">
             <Stack direction="row" spacing={2} justifyContent={'center'}>
                 <DemoPaper variant="elevation" elevation={16}>
-                    <h1>CONTACT US</h1>
+                    <h2>CONTACT US ON SOCIAL MEDIA</h2>
                     <p>Need help? Send us a message.</p>
                     <Box
                         component="form"

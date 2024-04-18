@@ -15,9 +15,9 @@ const PageContainer = styled(Container)(({ theme }) => ({
   padding: 0,
   width: '100%',
   justifyContent: 'center',
-  backgroundImage: `url('./island-tours.jpg')`,
-  backgroundBlendMode:'darken',
-  backgroundColor: '#214675',
+  backgroundImage: `url('./app-bg.jpg')`,
+  // backgroundBlendMode:'darken',
+  // backgroundColor: '#214675',
   backgroundSize: 'cover',
   padding: 0,
 }));
@@ -38,9 +38,9 @@ export default function Home() {
           <WhyChooseUs/>
         </SimpleContainer>
 
-        <SimpleContainer sx={{ height: '100vh' }}>
+        {/* <SimpleContainer sx={{ height: '100vh' }}>
           <ContactUs />
-        </SimpleContainer>
+        </SimpleContainer> */}
 
         <SimpleContainer sx={{ height: '100vh' }}>
           <Footer />

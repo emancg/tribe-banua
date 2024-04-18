@@ -229,9 +229,7 @@
   }
 }
 
-.linkdefault {
-  text-decoration: 'none';
-  color: 'red';
-  font-size: 30;
-  font-style: 'italic';
+
+.Link {
+  text-decoration: none;
 }
