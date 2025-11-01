@@ -1,27 +1,33 @@
 /**
  * Stats Counter Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your company's key metrics
+ * - Update numbers, labels, and icons
+ * - Icons from @mui/icons-material
+ * - Customize colors to match your theme
  */
 
 export const statsConfig = {
   title: "Our Impact in Numbers",
   stats: [
     {
-      number: 5000,
-      label: "Happy Travelers",
+      number: 1000,
+      label: "Happy Clients",
       suffix: "+",
       icon: "People",
     },
     {
-      number: 150,
-      label: "Tours Completed",
+      number: 500,
+      label: "Projects Completed",
       suffix: "+",
-      icon: "Tour",
+      icon: "CheckCircle",
     },
     {
       number: 50,
-      label: "Islands Explored",
+      label: "Team Members",
       suffix: "+",
-      icon: "Landscape",
+      icon: "Groups",
     },
     {
       number: 98,
@@ -32,7 +38,7 @@ export const statsConfig = {
   ],
   animationDuration: 2000,
   layout: "row",
-  backgroundColor: "#1f93b6",
+  backgroundColor: "#2196F3",
 };
 
 export const statsConfigSimple = {

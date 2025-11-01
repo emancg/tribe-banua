@@ -1,67 +1,71 @@
 /**
- * Expeditions Service Page Configuration
+ * Example Service Page Configuration
+ *
+ * INSTRUCTIONS:
+ * - This is an example of a detailed service page
+ * - Replace all content with your own service details
+ * - Add or remove sections as needed
+ * - Update images and links
  */
 
-export const expeditionsPageConfig = {
-  title: "EXPEDITIONS",
-  slug: "expeditions",
+export const servicePageConfig = {
+  title: "YOUR SERVICE NAME",
+  slug: "your-service-slug",
   background: {
-    image: "/expeditions-bg.jpg"
+    image: "/service-bg.jpg" // Replace with your background image
   },
   content: {
     sections: [
       {
-        heading: "What is the Tribe Banua Expedition?",
-        text: "Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks and explore tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan's culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime."
+        heading: "What is this service?",
+        text: "Write a compelling description of your service here. Explain what it is, what makes it unique, and why customers should choose you. Include details about the experience, benefits, and what sets you apart from competitors."
       },
       {
-        heading: "What to expect from this grand tour?",
-        text: "This expedition is packed with adventure and fun experiences! For your reference, see the itinerary below.",
+        heading: "What's included?",
+        text: "Describe the key features and benefits of your service.",
         image: {
-          src: "/expedition-activities.png",
-          alt: "expedition activities",
-          width: 360,
-          height: 900,
-          link: "/expedition-activities.png"
+          src: "/service-features.jpg", // Replace with your image
+          alt: "Service features",
+          width: 600,
+          height: 400,
+          link: "/service-features.jpg"
         }
       },
       {
-        heading: "INCLUSIONS AND REMINDERS",
+        heading: "INCLUSIONS AND FEATURES",
         bulletPoints: [
-          "Hotel pick-up's between 8:00-8:30 am. Pro tip: grab breakfast at your hotel since we're only dishing out lunch and dinner on day one. We promise our food's better, though!",
-          "Days two and three? We've got you covered from sunrise to sunset with breakfast, lunch, and dinner. No hungry tummies allowed!",
-          "When the sun dips below the horizon, it's time for the real party! Enjoy bottomless Rum and Coke under the stars, with a bit of Red Horse Beer to keep things interesting.",
-          "Bringing your own drinks? Absolutely! Just stash your stash in the boat's cooler and sip at your leisure.",
-          "As for where you'll rest your weary head, it's all about the Native House vibes. Think cozy, think comfy, think... no room service! But hey, it's all part of the adventure, right?"
+          "Feature 1: Describe the first key feature or inclusion",
+          "Feature 2: Describe the second key feature or inclusion",
+          "Feature 3: Describe the third key feature or inclusion",
+          "Feature 4: Add as many features as needed",
+          "Feature 5: Make each point clear and compelling"
         ]
       },
       {
         heading: "What to bring?",
         bulletPoints: [
-          "Prescribed Medications: Don't forget to inform the crew of any medical conditions and bring enough medication. Better safe than sorry, right?",
-          "Towels: Pack your own towels for bathing and washing up at the campsites. Plus, we'll throw in an extra one for good measure.",
-          "Sunscreen and Solar Protection: Palawan's sunny disposition is delightful, but don't forget your sunscreen, hat, and sunglasses to keep those rays at bay.",
-          "Mosquito Repellent: Stay bug-free with some repellent, especially during dusk and dawn. Those mosquitoes can be pesky!",
-          "A Dry Bag: Keep your gear dry with a waterproof bag, especially handy when traveling by kayak. Think of it as your trusty sidekick for the journey.",
-          "Water Shoes: While snorkeling gear is provided, water shoes add an extra layer of comfort for those beach walks. Trust us, your feet will thank you."
+          "Item 1: Describe what customers should bring",
+          "Item 2: Add preparation instructions",
+          "Item 3: Include any special requirements",
+          "Item 4: List important items to remember"
         ]
       },
       {
-        heading: "What to prepare?",
+        heading: "Preparation tips",
         bulletPoints: [
-          "Organize Your Luggage: Travel light by bringing essentials in a backpack or dry bag. Leave the rest in your luggage, safely stowed away on the boat.",
-          "Protect Your Gadgets and Documents: Even though the odds of a soggy mishap are low, it never hurts to be cautious. Keep your gadgets and documents in a waterproof bag, just in case.",
-          "With these essentials in tow, you're all set for an unforgettable expedition!"
+          "Tip 1: Provide helpful preparation advice",
+          "Tip 2: Share important reminders",
+          "Tip 3: Include any special instructions"
         ]
       },
       {
-        heading: "Are you ready for the tour of a lifetime?",
-        text: "If you are, send us a message or connect with us thru our social accounts below."
+        heading: "Ready to get started?",
+        text: "Contact us today to learn more or to book this service. We're here to help!"
       }
     ]
   },
   cta: {
-    text: "See More of Our Services",
-    hiddenServiceIndex: 0 // Hide expeditions from the services list
+    text: "See More Services",
+    hiddenServiceIndex: 0 // Optionally hide this service from the list
   }
 };

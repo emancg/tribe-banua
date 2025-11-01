@@ -2,6 +2,11 @@
  * Navigation Configuration
  *
  * Main menu, footer menu, and navigation structure
+ *
+ * INSTRUCTIONS:
+ * - Customize menu items based on your site structure
+ * - type: 'page' for full pages, 'section' for anchor links to sections
+ * - Use section links (e.g., '/#services-section') for smooth scrolling
  */
 
 export const navigationConfig = {
@@ -18,18 +23,13 @@ export const navigationConfig = {
       type: 'page'
     },
     {
-      label: 'Expeditions',
-      href: '/expeditions',
-      type: 'page'
-    },
-    {
       label: 'Services',
       href: '/#services-section',
       type: 'section'
     },
     {
-      label: 'Why Choose Us',
-      href: '/#whychooseus-section',
+      label: 'Features',
+      href: '/#features-section',
       type: 'section'
     },
     {
@@ -39,10 +39,10 @@ export const navigationConfig = {
     }
   ],
 
-  // Footer menu (optional - can add later)
+  // Footer menu (optional - customize as needed)
   footerMenu: [
-    // { label: 'About', href: '/about' },
-    // { label: 'Terms', href: '/terms' },
-    // { label: 'Privacy', href: '/privacy' }
+    { label: 'About', href: '/about' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' }
   ]
 };

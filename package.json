@@ -1,13 +1,12 @@
 {
-  "name": "tribe-banua",
+  "name": "nextjs-mui-boilerplate",
   "version": "1.0.0",
   "description": "A comprehensive Next.js + MUI boilerplate with 60+ components, dark mode, and config-driven architecture",
   "private": true,
-  "author": "Tribe Banua",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/tribe-banua.git"
+    "url": "https://github.com/yourusername/nextjs-mui-boilerplate.git"
   },
   "keywords": [
     "nextjs",

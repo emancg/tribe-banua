@@ -1,16 +1,22 @@
 /**
  * Theme Configuration
  *
- * Minimal, clean, fresh design with bright colors and open space
+ * Customize your brand colors, typography, and design tokens
+ *
+ * INSTRUCTIONS:
+ * - Replace brand name and logo with your own
+ * - Customize color palette to match your brand
+ * - Adjust typography settings as needed
+ * - Icon options: Any icon name from @mui/icons-material (e.g., "Home", "Business", "Star")
  */
 
 export const themeConfig = {
   // Brand identity
   brand: {
-    name: "Tribe Banua",
+    name: "Your Brand",
     logo: {
-      icon: "Sailing",
-      text: "TRIBE BANUA"
+      icon: "AutoAwesome", // MUI icon name from @mui/icons-material
+      text: "YOUR BRAND"
     }
   },
 

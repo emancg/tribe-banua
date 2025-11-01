@@ -1,18 +1,24 @@
 /**
  * About Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your company story and values
+ * - Update paragraphs to describe your mission
+ * - Customize stats to match your achievements
+ * - Replace image with your own
  */
 
 export const aboutConfig = {
-  title: "About Tribe Banua",
+  title: "About Your Company",
   subtitle: "Who We Are",
   contentParagraphs: [
-    "Tribe Banua is your trusted partner for unforgettable adventures in Palawan, Philippines. We specialize in creating authentic, immersive experiences that connect travelers with the natural beauty and rich culture of this tropical paradise.",
-    "Our team of experienced guides and crew members are passionate about sharing the wonders of Palawan while maintaining sustainable tourism practices. We believe in responsible travel that benefits both our guests and the local communities we visit.",
-    "Whether you're seeking thrilling expeditions, relaxing island tours, or reliable transportation services, we're here to make your Palawan journey extraordinary."
+    "Write the first paragraph about your company, what you do, and what makes you unique. Focus on your core mission and the value you provide to customers.",
+    "Add a second paragraph about your team, your approach, or your methodology. Share what differentiates you from competitors and why customers should choose you.",
+    "Conclude with a paragraph about your commitment to customers, your values, or a call to action inviting them to learn more about your services."
   ],
   image: {
-    src: "/services/expeditions.jpg",
-    alt: "Tribe Banua Expedition",
+    src: "/about-image.jpg", // Replace with your image
+    alt: "About Your Company",
     width: 600,
     height: 400,
   },
@@ -24,19 +30,19 @@ export const aboutConfig = {
       label: "Years Experience",
     },
     {
-      number: "5000",
+      number: "1000",
       suffix: "+",
-      label: "Happy Customers",
+      label: "Happy Clients",
     },
     {
       number: "50",
       suffix: "+",
-      label: "Destinations",
+      label: "Projects Completed",
     },
     {
       number: "98",
       suffix: "%",
-      label: "Satisfaction",
+      label: "Satisfaction Rate",
     },
   ],
 };
@@ -45,8 +51,8 @@ export const aboutConfigTextRight = {
   ...aboutConfig,
   layout: "text-right",
   image: {
-    src: "/services/island-tours.jpg",
-    alt: "El Nido Island Tours",
+    src: "/about-image-2.jpg", // Replace with your image
+    alt: "Your Company Services",
     width: 600,
     height: 400,
   },
@@ -55,7 +61,7 @@ export const aboutConfigTextRight = {
 export const aboutConfigCentered = {
   title: "Our Mission",
   subtitle: "What Drives Us",
-  content: "At Tribe Banua, we're dedicated to creating transformative travel experiences that go beyond typical tours. We connect you with the heart of Palawan through authentic cultural encounters, pristine natural environments, and unforgettable adventures. Our commitment to sustainability and community engagement ensures that every journey leaves a positive impact.",
+  content: "Write a compelling mission statement that explains your purpose, vision, and values. This should be 2-3 sentences that capture what your company stands for and what you aim to achieve for your customers.",
   layout: "text-only",
   backgroundColor: "#f5f5f5",
 };

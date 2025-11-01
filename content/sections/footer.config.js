@@ -1,45 +1,51 @@
 /**
  * Footer Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your contact information
+ * - Update social media links
+ * - Add or remove contact methods as needed
+ * - Icons available from @mui/icons-material
  */
 
 export const footerConfig = {
-  title: "CONTACT US",
+  title: "GET IN TOUCH",
   contact: {
-    email: "tribebanuaexpeditions@gmail.com",
-    phone: "+63 9XX-XXX-XXXX",
-    address: "Palawan, Philippines"
+    email: "contact@yourcompany.com",
+    phone: "+1 (555) 123-4567",
+    address: "Your City, Your Country"
   },
   contactInfo: [
     {
       icon: "Facebook",
       type: "social",
-      label: "@facebook_page",
-      href: "https://web.facebook.com/p/Tribe-Banua-100090814745352/?_rdc=1&_rdr#"
+      label: "@yourcompany",
+      href: "https://facebook.com/yourcompany"
     },
     {
       icon: "Instagram",
       type: "social",
-      label: "@instagram_page",
-      href: "https://www.instagram.com/tribebanua/"
+      label: "@yourcompany",
+      href: "https://instagram.com/yourcompany"
     },
     {
       icon: "Phone",
       type: "contact",
-      label: "+63 9XX-XXX-XXXX",
-      href: "tel:+639XXXXXXXX"
+      label: "+1 (555) 123-4567",
+      href: "tel:+15551234567"
     },
     {
       icon: "Email",
       type: "contact",
-      label: "tribebanuaexpeditions@gmail.com",
-      href: "mailto:tribebanuaexpeditions@gmail.com"
+      label: "contact@yourcompany.com",
+      href: "mailto:contact@yourcompany.com"
     }
   ],
-  // Website link (currently commented out in original)
+  // Optional: Website link
   // {
-  //   icon: "LanguageIcon",
+  //   icon: "Language",
   //   type: "website",
-  //   label: "www.tribebanuaexpeditions.com",
-  //   href: "https://www.tribebanuaexpeditions.com"
+  //   label: "www.yourcompany.com",
+  //   href: "https://www.yourcompany.com"
   // }
 };

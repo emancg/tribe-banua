@@ -1,50 +1,57 @@
 /**
  * Testimonials Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with real testimonials from your customers
+ * - Update author names, roles, and companies
+ * - Adjust ratings to match actual feedback
+ * - Choose layout: 'carousel', 'grid', or 'single'
+ * - Choose variant: 'card', 'quote', or 'minimal'
  */
 
 export const testimonialsConfig = {
-  title: "What Our Customers Say",
+  title: "What Our Clients Say",
   testimonials: [
     {
-      quote: "The expedition was absolutely incredible! The crew was professional, the destinations were breathtaking, and the experience exceeded all our expectations. We can't wait to come back!",
+      quote: "Working with this team was an absolute pleasure. They delivered exceptional results and exceeded our expectations in every way. Highly recommended!",
+      author: "John Smith",
+      role: "CEO",
+      company: "Tech Corp",
+      rating: 5,
+    },
+    {
+      quote: "The attention to detail and professionalism was outstanding. Our project was completed on time and the quality was exceptional. We couldn't be happier!",
       author: "Sarah Johnson",
-      role: "Adventure Traveler",
-      company: "USA",
+      role: "Marketing Director",
+      company: "Growth Inc",
       rating: 5,
     },
     {
-      quote: "Best island hopping tour we've ever done! The hidden lagoons and pristine beaches were like something out of a dream. Highly recommend Tribe Banua to anyone visiting El Nido.",
+      quote: "Fantastic service from start to finish. The team was responsive, knowledgeable, and truly cared about our success. Will definitely work with them again!",
       author: "Michael Chen",
-      role: "Travel Blogger",
-      company: "Singapore",
+      role: "Founder",
+      company: "Startup XYZ",
       rating: 5,
     },
     {
-      quote: "The ferry service was comfortable and punctual. The crew made sure everyone was safe and the journey was smooth. Great way to travel between Coron and El Nido!",
-      author: "Emma Rodriguez",
-      role: "Digital Nomad",
-      company: "Spain",
+      quote: "Professional, reliable, and results-driven. They understood our needs and delivered a solution that perfectly fit our requirements. Excellent work!",
+      author: "Emma Davis",
+      role: "Product Manager",
+      company: "Innovation Labs",
       rating: 4.5,
     },
     {
-      quote: "Our family had an amazing time on the expedition. The activities were perfect for all ages, and the cultural experiences with the local tribes were truly eye-opening. Thank you Tribe Banua!",
-      author: "David Kim",
-      role: "Family Traveler",
-      company: "South Korea",
+      quote: "Great communication throughout the entire process. The team was always available to answer questions and provided valuable insights. Highly impressed!",
+      author: "David Wilson",
+      role: "Operations Director",
+      company: "Enterprise Solutions",
       rating: 5,
     },
     {
-      quote: "Professional service from start to finish. The van transfer was comfortable, the driver was experienced, and everything was on time. Will definitely use their services again!",
+      quote: "Outstanding quality and attention to detail. They went above and beyond to ensure everything was perfect. Would recommend to anyone!",
       author: "Lisa Anderson",
-      role: "Solo Traveler",
-      company: "Australia",
-      rating: 4.5,
-    },
-    {
-      quote: "The snorkeling spots were incredible - so many colorful fish and healthy coral reefs! The guides were knowledgeable and made sure we had the best experience possible.",
-      author: "James Wilson",
-      role: "Marine Enthusiast",
-      company: "UK",
+      role: "Creative Director",
+      company: "Design Studio",
       rating: 5,
     },
   ],

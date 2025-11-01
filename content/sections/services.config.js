@@ -1,33 +1,39 @@
 /**
  * Services Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your own services/products
+ * - Update images, titles, and descriptions
+ * - Update hrefs to match your routing structure
+ * - Add or remove items as needed
  */
 
 export const servicesConfig = {
-  title: "OUR SERVICES",
+  title: "WHAT WE OFFER",
   items: [
     {
-      title: "Expeditions",
-      image: "/services/expeditions.jpg",
-      description: "Multi-day boat expeditions through paradise",
-      href: "/services/expeditions"
+      title: "Service One",
+      image: "/services/service-1.jpg", // Replace with your image
+      description: "Description of your first service offering",
+      href: "/services/service-one"
     },
     {
-      title: "Island Tours",
-      image: "/services/island-tours.jpg",
-      description: "El Nido island hopping adventures",
-      href: "/services/island-tours"
+      title: "Service Two",
+      image: "/services/service-2.jpg", // Replace with your image
+      description: "Description of your second service offering",
+      href: "/services/service-two"
     },
     {
-      title: "Ferry Transfer",
-      image: "/services/ferry-transfer.jpg",
-      description: "Coron ↔ El Nido ferry service",
-      href: "/services/ferry"
+      title: "Service Three",
+      image: "/services/service-3.jpg", // Replace with your image
+      description: "Description of your third service offering",
+      href: "/services/service-three"
     },
     {
-      title: "Van Transfer",
-      image: "/services/van-transfer.jpg",
-      description: "Puerto Princesa ↔ El Nido transport",
-      href: "/services/van"
+      title: "Service Four",
+      image: "/services/service-4.jpg", // Replace with your image
+      description: "Description of your fourth service offering",
+      href: "/services/service-four"
     }
   ],
   hiddenItem: 4 // Used to control visibility if needed

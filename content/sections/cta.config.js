@@ -1,43 +1,49 @@
 /**
  * CTA Banner Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your call-to-action messaging
+ * - Update CTAs to match your conversion goals
+ * - Choose variant: 'gradient', 'solid', 'outlined', or 'image'
+ * - Customize colors and background images as needed
  */
 
 export const ctaConfig = {
-  title: "Ready to Start Your Adventure?",
-  description: "Book your Palawan experience today and create memories that will last a lifetime.",
+  title: "Ready to Get Started?",
+  description: "Take the first step towards achieving your goals. Let's work together to make it happen.",
   primaryCTA: {
-    text: "Book Now",
+    text: "Get Started",
     href: "#contactus-section"
   },
   secondaryCTA: {
     text: "Learn More",
-    href: "/services/expeditions"
+    href: "/about"
   },
   variant: "gradient", // 'gradient', 'solid', 'outlined', 'image'
 };
 
 export const ctaConfigAlt = {
-  title: "Questions About Our Services?",
-  description: "Get in touch with our team for personalized recommendations and booking assistance.",
+  title: "Have Questions?",
+  description: "Our team is here to help. Reach out for personalized guidance and support.",
   primaryCTA: {
     text: "Contact Us",
     href: "#contactus-section"
   },
   variant: "solid",
-  backgroundColor: "#1f93b6",
+  backgroundColor: "#2196F3",
 };
 
 export const ctaConfigImage = {
-  title: "Explore the Beauty of Palawan",
-  description: "Join thousands of satisfied travelers who have experienced the adventure of a lifetime.",
+  title: "Discover What We Can Do For You",
+  description: "Join hundreds of satisfied customers who have achieved their goals with us.",
   primaryCTA: {
-    text: "View All Tours",
+    text: "View Services",
     href: "/services"
   },
   secondaryCTA: {
-    text: "See Gallery",
-    href: "/gallery"
+    text: "See Portfolio",
+    href: "/portfolio"
   },
   variant: "image",
-  backgroundImage: "/services/island-tours.jpg",
+  backgroundImage: "/cta-background.jpg", // Replace with your image
 };

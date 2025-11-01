@@ -1,33 +1,39 @@
 /**
  * Why Choose Us Section Configuration
+ *
+ * INSTRUCTIONS:
+ * - Replace with your unique selling points
+ * - Update icons from @mui/icons-material
+ * - Customize titles and descriptions
+ * - Adjust layout columns as needed (xs: mobile, sm: tablet, md: desktop)
  */
 
 export const whyChooseUsConfig = {
   title: "WHY CHOOSE US?",
   items: [
     {
-      title: "Successful Expeditions",
-      icon: "Sailing",
+      title: "Quality Service",
+      icon: "VerifiedUser",
       iconColor: "primary",
-      subtitle: "A history of successful and meticulously planned journeys to remote paradises and untamed natural wonders."
+      subtitle: "We deliver exceptional quality in everything we do, ensuring your complete satisfaction."
     },
     {
-      title: "Expert Crew",
+      title: "Expert Team",
       icon: "Groups3",
       iconColor: "secondary",
-      subtitle: "Rest assured with our expert crew, who bring a wealth of knowledge, safety, and enthusiasm to every expedition."
+      subtitle: "Our experienced professionals bring expertise and dedication to every project."
     },
     {
-      title: "Trustworthy",
-      icon: "VerifiedUser",
-      iconColor: "green",
-      subtitle: "Built on a foundation of integrity, transparency, and a proven track record of delivering exceptional expedition experiences."
+      title: "Reliable",
+      icon: "Security",
+      iconColor: "success",
+      subtitle: "Count on us for consistent, dependable service you can trust."
     },
     {
-      title: "Highly Rated",
+      title: "Customer Focused",
       icon: "AutoAwesome",
-      iconColor: "gold",
-      subtitle: "Backed by high ratings and glowing reviews from satisfied clients who have experienced unforgettable adventures with us."
+      iconColor: "warning",
+      subtitle: "Your needs come first. We're committed to exceeding your expectations."
     }
   ],
   layout: {

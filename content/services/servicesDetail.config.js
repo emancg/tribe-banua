@@ -2,221 +2,205 @@
  * Services Detail Configuration
  *
  * Detailed information for each service page
+ *
+ * INSTRUCTIONS:
+ * - Customize each service with your own details
+ * - Add or remove services as needed
+ * - Update images, pricing, and features
+ * - Use this as a template for your service pages
  */
 
 export const servicesDetailConfig = {
-  expeditions: {
-    slug: "expeditions",
-    title: "Expeditions",
-    heroImage: "/services/expeditions.jpg",
-    shortDescription: "Multi-day boat expeditions through paradise",
-    fullDescription: "Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs.",
+  "service-one": {
+    slug: "service-one",
+    title: "Service One",
+    heroImage: "/services/service-1.jpg",
+    shortDescription: "A brief description of your first service",
+    fullDescription: "Write a comprehensive description of your first service. Explain what it includes, who it's for, and why it's valuable. Make it compelling and informative.",
     features: [
-      "3-day boat expedition from Linapacan to Culion",
-      "Snorkeling in vibrant coral reefs",
-      "Visit remote tribe villages",
-      "Traditional cultural experiences",
-      "Kayaking through mangrove forests",
-      "Authentic native house accommodation"
+      "Key feature 1",
+      "Key feature 2",
+      "Key feature 3",
+      "Key feature 4",
+      "Key feature 5",
+      "Key feature 6"
     ],
     pricing: {
       price: "Contact for pricing",
-      currency: "PHP",
-      unit: "per person"
+      currency: "USD",
+      unit: "per unit"
     },
-    duration: "3 days / 2 nights",
+    duration: "Specify duration",
     itinerary: [
       {
-        day: "Day 1",
-        title: "Departure & Island Discovery",
-        activities: "Hotel pick-up, boat departure, snorkeling, lunch and dinner included"
+        day: "Phase 1",
+        title: "Phase One Title",
+        activities: "Describe what happens in this phase"
       },
       {
-        day: "Day 2",
-        title: "Cultural Immersion",
-        activities: "Village visits, traditional dances, mangrove kayaking, all meals included"
+        day: "Phase 2",
+        title: "Phase Two Title",
+        activities: "Describe what happens in this phase"
       },
       {
-        day: "Day 3",
-        title: "Final Exploration & Return",
-        activities: "Morning snorkeling, island hopping, return to El Nido"
+        day: "Phase 3",
+        title: "Phase Three Title",
+        activities: "Describe what happens in this phase"
       }
     ],
     inclusions: [
-      "Hotel pick-up between 8:00-8:30 am",
-      "All meals from Day 1 lunch through Day 3",
-      "Bottomless Rum and Coke, Red Horse Beer",
-      "Native house accommodation",
-      "Snorkeling equipment",
-      "Professional crew and guides"
+      "Inclusion 1",
+      "Inclusion 2",
+      "Inclusion 3",
+      "Inclusion 4",
+      "Inclusion 5"
     ],
     whatToBring: [
-      "Prescribed medications",
-      "Personal towels",
-      "Sunscreen and sun protection",
-      "Mosquito repellent",
-      "Waterproof dry bag",
-      "Water shoes"
+      "Required item 1",
+      "Required item 2",
+      "Required item 3",
+      "Required item 4"
     ]
   },
 
-  "island-tours": {
-    slug: "island-tours",
-    title: "Island Tours",
-    heroImage: "/services/island-tours.jpg",
-    shortDescription: "El Nido island hopping adventures",
-    fullDescription: "Explore the breathtaking islands of El Nido with our guided island hopping tours. Discover hidden lagoons, pristine beaches, and vibrant marine life. Perfect for families, couples, and adventure seekers.",
+  "service-two": {
+    slug: "service-two",
+    title: "Service Two",
+    heroImage: "/services/service-2.jpg",
+    shortDescription: "A brief description of your second service",
+    fullDescription: "Write a comprehensive description of your second service. Highlight what makes it unique and valuable to your customers.",
     features: [
-      "Visit multiple stunning islands in one day",
-      "Swimming and snorkeling at best spots",
-      "Delicious lunch included",
-      "Professional tour guides",
-      "Small group sizes for personalized experience",
-      "All equipment provided"
+      "Key feature 1",
+      "Key feature 2",
+      "Key feature 3",
+      "Key feature 4",
+      "Key feature 5"
     ],
     pricing: {
-      price: "1,500 - 2,000",
-      currency: "PHP",
-      unit: "per person"
+      price: "99",
+      currency: "USD",
+      unit: "per month"
     },
-    duration: "Full day (8-10 hours)",
+    duration: "Specify duration",
     itinerary: [
       {
-        day: "Morning",
-        title: "Island Departure",
-        activities: "Pick-up from hotel, boat departure, first island stop"
+        day: "Step 1",
+        title: "First Step",
+        activities: "Description of first step"
       },
       {
-        day: "Midday",
-        title: "Exploration & Lunch",
-        activities: "Visit 3-4 islands, snorkeling, beach lunch on island"
+        day: "Step 2",
+        title: "Second Step",
+        activities: "Description of second step"
       },
       {
-        day: "Afternoon",
-        title: "Final Stops & Return",
-        activities: "Last island visits, sunset viewing, return to El Nido"
+        day: "Step 3",
+        title: "Final Step",
+        activities: "Description of final step"
       }
     ],
     inclusions: [
-      "Hotel pick-up and drop-off",
-      "Island hopping boat tour",
-      "Beach lunch and refreshments",
-      "Snorkeling equipment",
-      "Professional tour guide",
-      "Environmental fees included"
+      "Inclusion 1",
+      "Inclusion 2",
+      "Inclusion 3",
+      "Inclusion 4"
     ],
     whatToBring: [
-      "Swimwear and extra clothes",
-      "Sunscreen and sunglasses",
-      "Waterproof camera",
-      "Cash for personal expenses",
-      "Towel"
+      "Required item 1",
+      "Required item 2",
+      "Required item 3"
     ]
   },
 
-  ferry: {
-    slug: "ferry",
-    title: "Ferry Transfer",
-    heroImage: "/services/ferry.jpg",
-    shortDescription: "Coron ↔ El Nido ferry service",
-    fullDescription: "Travel comfortably between Coron and El Nido with our reliable ferry service. Enjoy scenic ocean views, safe passage, and convenient schedules that fit your travel plans.",
+  "service-three": {
+    slug: "service-three",
+    title: "Service Three",
+    heroImage: "/services/service-3.jpg",
+    shortDescription: "A brief description of your third service",
+    fullDescription: "Write a comprehensive description of your third service. Explain the benefits and value proposition.",
     features: [
-      "Regular daily departures",
-      "Comfortable seating",
-      "Life jackets and safety equipment",
-      "Scenic ocean route",
-      "Luggage storage included",
-      "Professional crew"
+      "Key feature 1",
+      "Key feature 2",
+      "Key feature 3",
+      "Key feature 4"
     ],
     pricing: {
-      price: "1,800 - 2,500",
-      currency: "PHP",
-      unit: "per person"
+      price: "199",
+      currency: "USD",
+      unit: "per service"
     },
-    duration: "3-4 hours",
+    duration: "Specify duration",
     itinerary: [
       {
-        day: "Morning",
-        title: "Departure",
-        activities: "Check-in at port, boarding, departure from Coron/El Nido"
+        day: "Stage 1",
+        title: "Initial Stage",
+        activities: "Description of initial stage"
       },
       {
-        day: "Midday",
-        title: "Scenic Journey",
-        activities: "Enjoy ocean views, relax on deck, possible island sightings"
+        day: "Stage 2",
+        title: "Middle Stage",
+        activities: "Description of middle stage"
       },
       {
-        day: "Afternoon",
-        title: "Arrival",
-        activities: "Arrival at destination port, luggage claim, optional transfer to hotel"
+        day: "Stage 3",
+        title: "Final Stage",
+        activities: "Description of final stage"
       }
     ],
     inclusions: [
-      "Ferry ticket",
-      "Life jacket and safety equipment",
-      "Luggage allowance (up to 20kg)",
-      "Comfortable seating",
-      "Professional crew"
+      "Inclusion 1",
+      "Inclusion 2",
+      "Inclusion 3"
     ],
     whatToBring: [
-      "Valid ID",
-      "Travel documents",
-      "Light jacket (can be windy)",
-      "Snacks and water",
-      "Motion sickness medication if needed"
+      "Required item 1",
+      "Required item 2"
     ]
   },
 
-  van: {
-    slug: "van",
-    title: "Van Transfer",
-    heroImage: "/services/van.jpg",
-    shortDescription: "Puerto Princesa ↔ El Nido transport",
-    fullDescription: "Safe and comfortable land transfer between Puerto Princesa and El Nido. Our air-conditioned vans provide a smooth journey with experienced drivers who know the route well.",
+  "service-four": {
+    slug: "service-four",
+    title: "Service Four",
+    heroImage: "/services/service-4.jpg",
+    shortDescription: "A brief description of your fourth service",
+    fullDescription: "Write a comprehensive description of your fourth service. Make it clear why customers should choose this option.",
     features: [
-      "Air-conditioned van",
-      "Door-to-door service",
-      "Experienced drivers",
-      "Rest stops along the way",
-      "Luggage space included",
-      "Flexible departure times"
+      "Key feature 1",
+      "Key feature 2",
+      "Key feature 3",
+      "Key feature 4"
     ],
     pricing: {
-      price: "800 - 1,200",
-      currency: "PHP",
-      unit: "per person"
+      price: "299",
+      currency: "USD",
+      unit: "per service"
     },
-    duration: "5-6 hours",
+    duration: "Specify duration",
     itinerary: [
       {
-        day: "Morning",
-        title: "Hotel Pick-up",
-        activities: "Pick-up from your hotel in Puerto Princesa or El Nido"
+        day: "Part 1",
+        title: "First Part",
+        activities: "Description of first part"
       },
       {
-        day: "Midday",
-        title: "Scenic Drive",
-        activities: "Drive through Palawan countryside, rest stop for lunch and comfort break"
+        day: "Part 2",
+        title: "Second Part",
+        activities: "Description of second part"
       },
       {
-        day: "Afternoon",
-        title: "Arrival",
-        activities: "Arrival at destination, drop-off at your hotel"
+        day: "Part 3",
+        title: "Final Part",
+        activities: "Description of final part"
       }
     ],
     inclusions: [
-      "Hotel pick-up and drop-off",
-      "Air-conditioned van",
-      "Experienced driver",
-      "Luggage allowance",
-      "Rest stops"
+      "Inclusion 1",
+      "Inclusion 2",
+      "Inclusion 3"
     ],
     whatToBring: [
-      "Snacks and drinks",
-      "Light jacket or blanket",
-      "Entertainment (books, music, etc.)",
-      "Cash for lunch stop",
-      "Travel pillow (optional)"
+      "Required item 1",
+      "Required item 2"
     ]
   }
 };
