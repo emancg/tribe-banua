@@ -100,23 +100,8 @@ const ButtonGroup = styled(Box)(({ theme }) => ({
 }));
 
 export default function HeroVideo({ config, sx = {} }) {
-  if (!config) {
-    return null;
-  }
-
-  const {
-    title,
-    subtitle,
-    ctaButton,
-    secondaryCTA,
-    videoUrl,
-    posterImage,
-    autoplay = true,
-    loop = true,
-    muted: initialMuted = true,
-    overlayOpacity = 0.4,
-    height = '100vh',
-  } = config;
+  const autoplay = config?.autoplay ?? true;
+  const initialMuted = config?.muted ?? true;
 
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(autoplay);
@@ -129,6 +114,22 @@ export default function HeroVideo({ config, sx = {} }) {
       });
     }
   }, [autoplay]);
+
+  if (!config) {
+    return null;
+  }
+
+  const {
+    title,
+    subtitle,
+    ctaButton,
+    secondaryCTA,
+    videoUrl,
+    posterImage,
+    loop = true,
+    overlayOpacity = 0.4,
+    height = '100vh',
+  } = config;
 
   const togglePlay = () => {
     if (videoRef.current) {

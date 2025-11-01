@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-import Image from 'next/image';
-import Container from '../../utility/Container';
+import Container from '@mui/material/Container';
+import InfoIcon from '@mui/icons-material/Info';
 
 /**
  * AboutSection Component
@@ -30,22 +30,25 @@ import Container from '../../utility/Container';
  */
 
 const SectionContainer = styled(Box)(({ theme, bgcolor }) => ({
-  padding: theme.spacing(8, 0),
-  backgroundColor: bgcolor || 'white',
-  [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(6, 0),
+  padding: theme.spacing(12, 2),
+  backgroundColor: bgcolor || '#FFFFFF',
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(8, 2),
   },
 }));
 
-const ImageWrapper = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.spacing(2),
-  overflow: 'hidden',
-  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
-  '& img': {
-    display: 'block',
-    width: '100%',
-    height: 'auto',
+const ImagePlaceholder = styled(Box)(({ theme }) => ({
+  height: '400px',
+  backgroundColor: '#F5F5F5',
+  borderRadius: '4px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  border: `1px solid ${theme.palette.divider}`,
+  '& svg': {
+    fontSize: '6rem',
+    color: theme.palette.primary.main,
+    opacity: 0.3,
   },
 }));
 
@@ -81,68 +84,71 @@ export default function AboutSection({ config, sx = {} }) {
   if (layout === 'text-only' || (!image && !images)) {
     return (
       <SectionContainer bgcolor={backgroundColor} sx={sx}>
-        <Container maxWidth="md">
-          {subtitle && (
+        <Container maxWidth="lg">
+          <Box sx={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+            {subtitle && (
+              <Typography
+                variant="overline"
+                sx={{
+                  color: 'text.secondary',
+                  fontWeight: 600,
+                  letterSpacing: '1px',
+                  display: 'block',
+                  marginBottom: 2,
+                  fontSize: '0.875rem',
+                }}
+              >
+                {subtitle}
+              </Typography>
+            )}
+
             <Typography
-              variant="overline"
+              variant="h2"
+              component="h2"
               sx={{
-                color: 'primary.main',
-                fontWeight: 600,
-                letterSpacing: 1.5,
-                display: 'block',
-                marginBottom: 1,
-                textAlign: layout === 'centered' ? 'center' : 'left',
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                color: 'text.primary',
+                marginBottom: 4,
               }}
             >
-              {subtitle}
+              {title}
             </Typography>
-          )}
 
-          <Typography
-            variant="h3"
-            component="h2"
-            sx={{
-              fontWeight: 700,
-              marginBottom: 4,
-              textAlign: layout === 'centered' ? 'center' : 'left',
-            }}
-          >
-            {title}
-          </Typography>
+            {contentArray.map((paragraph, index) => (
+              <Typography
+                key={index}
+                variant="body1"
+                paragraph
+                sx={{
+                  lineHeight: 1.7,
+                  fontSize: '1.0625rem',
+                  marginBottom: 3,
+                  color: 'text.secondary',
+                }}
+              >
+                {paragraph}
+              </Typography>
+            ))}
 
-          {contentArray.map((paragraph, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              paragraph
-              sx={{
-                lineHeight: 1.8,
-                fontSize: '1.1rem',
-                marginBottom: 2,
-                textAlign: layout === 'centered' ? 'center' : 'justify',
-              }}
-            >
-              {paragraph}
-            </Typography>
-          ))}
-
-          {stats && stats.length > 0 && (
-            <StatsGrid container spacing={3}>
-              {stats.map((stat, index) => (
-                <Grid item xs={6} md={3} key={index}>
-                  <StatBox>
-                    <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.main' }}>
-                      {stat.number}
-                      {stat.suffix}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {stat.label}
-                    </Typography>
-                  </StatBox>
-                </Grid>
-              ))}
-            </StatsGrid>
-          )}
+            {stats && stats.length > 0 && (
+              <StatsGrid container spacing={3} sx={{ mt: 6 }}>
+                {stats.map((stat, index) => (
+                  <Grid item xs={6} md={3} key={index}>
+                    <StatBox>
+                      <Typography variant="h3" sx={{ fontWeight: 700, color: 'primary.main' }}>
+                        {stat.number}
+                        {stat.suffix}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                        {stat.label}
+                      </Typography>
+                    </StatBox>
+                  </Grid>
+                ))}
+              </StatsGrid>
+            )}
+          </Box>
         </Container>
       </SectionContainer>
     );
@@ -155,18 +161,19 @@ export default function AboutSection({ config, sx = {} }) {
   return (
     <SectionContainer bgcolor={backgroundColor} sx={sx}>
       <Container maxWidth="lg">
-        <Grid container spacing={6} alignItems="center">
+        <Grid container spacing={8} alignItems="center">
           {/* Text Content */}
           <Grid item xs={12} md={6} order={{ xs: 1, md: gridOrder.text }}>
             {subtitle && (
               <Typography
                 variant="overline"
                 sx={{
-                  color: 'primary.main',
+                  color: 'text.secondary',
                   fontWeight: 600,
-                  letterSpacing: 1.5,
+                  letterSpacing: '1px',
                   display: 'block',
-                  marginBottom: 1,
+                  marginBottom: 2,
+                  fontSize: '0.875rem',
                 }}
               >
                 {subtitle}
@@ -174,10 +181,12 @@ export default function AboutSection({ config, sx = {} }) {
             )}
 
             <Typography
-              variant="h3"
+              variant="h2"
               component="h2"
               sx={{
                 fontWeight: 700,
+                fontSize: 'clamp(1.75rem, 4vw, 2.25rem)',
+                color: 'text.primary',
                 marginBottom: 3,
               }}
             >
@@ -190,10 +199,10 @@ export default function AboutSection({ config, sx = {} }) {
                 variant="body1"
                 paragraph
                 sx={{
-                  lineHeight: 1.8,
-                  fontSize: '1.1rem',
-                  marginBottom: 2,
-                  textAlign: 'justify',
+                  lineHeight: 1.7,
+                  fontSize: '1.0625rem',
+                  marginBottom: 2.5,
+                  color: 'text.secondary',
                 }}
               >
                 {paragraph}
@@ -201,15 +210,15 @@ export default function AboutSection({ config, sx = {} }) {
             ))}
 
             {stats && stats.length > 0 && (
-              <Grid container spacing={2} sx={{ mt: 2 }}>
+              <Grid container spacing={3} sx={{ mt: 3 }}>
                 {stats.map((stat, index) => (
                   <Grid item xs={6} key={index}>
-                    <StatBox sx={{ textAlign: 'left' }}>
-                      <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.main' }}>
+                    <StatBox sx={{ textAlign: 'left', padding: 0 }}>
+                      <Typography variant="h3" sx={{ fontWeight: 700, color: 'primary.main' }}>
                         {stat.number}
                         {stat.suffix}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                         {stat.label}
                       </Typography>
                     </StatBox>
@@ -219,44 +228,12 @@ export default function AboutSection({ config, sx = {} }) {
             )}
           </Grid>
 
-          {/* Image Content */}
+          {/* Image Placeholder */}
           <Grid item xs={12} md={6} order={{ xs: 2, md: gridOrder.image }}>
-            {image && (
-              <ImageWrapper>
-                <Image
-                  src={image.src}
-                  alt={image.alt || title}
-                  width={image.width || 600}
-                  height={image.height || 400}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    objectFit: 'cover',
-                  }}
-                />
-              </ImageWrapper>
-            )}
-
-            {images && images.length > 0 && (
-              <Grid container spacing={2}>
-                {images.map((img, index) => (
-                  <Grid item xs={images.length === 1 ? 12 : 6} key={index}>
-                    <ImageWrapper>
-                      <Image
-                        src={img.src}
-                        alt={img.alt || `${title} ${index + 1}`}
-                        width={img.width || 300}
-                        height={img.height || 300}
-                        style={{
-                          width: '100%',
-                          height: 'auto',
-                          objectFit: 'cover',
-                        }}
-                      />
-                    </ImageWrapper>
-                  </Grid>
-                ))}
-              </Grid>
+            {(image || images) && (
+              <ImagePlaceholder>
+                <InfoIcon />
+              </ImagePlaceholder>
             )}
           </Grid>
         </Grid>

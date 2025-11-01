@@ -4,6 +4,11 @@
 
 export const footerConfig = {
   title: "CONTACT US",
+  contact: {
+    email: "tribebanuaexpeditions@gmail.com",
+    phone: "+63 9XX-XXX-XXXX",
+    address: "Palawan, Philippines"
+  },
   contactInfo: [
     {
       icon: "FacebookIcon",

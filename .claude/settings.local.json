@@ -6,7 +6,8 @@
       "Bash(npm install:*)",
       "Bash(cat:*)",
       "Bash(npm run build:*)",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []

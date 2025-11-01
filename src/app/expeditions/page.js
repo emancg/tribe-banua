@@ -18,27 +18,19 @@ import { expeditionsPageConfig } from '../../../content/pages/expeditions.config
 import { servicesConfig } from '../../../content/sections/services.config';
 import { footerConfig } from '../../../content/sections/footer.config';
 
-// Styled page container with background
-const PageContainer = styled(MuiContainer)(({ theme, config }) => ({
-  padding: 0,
+// Styled page container
+const PageContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
   width: '100%',
-  justifyContent: 'center',
-  backgroundImage: config?.background?.image
-    ? `url('${config.background.image}')`
-    : 'none',
-  backgroundSize: 'cover',
-  backgroundAttachment: 'fixed',
-  backgroundPosition: 'center',
 }));
 
 const PageTitle = styled(Box)(({ theme }) => ({
-  backgroundColor: 'rgba(31, 147, 182, 0.9)',
-  color: 'white',
-  padding: theme.spacing(4),
+  backgroundColor: '#FFFFFF',
+  padding: theme.spacing(12, 2),
   textAlign: 'center',
-  marginTop: theme.spacing(8), // Account for fixed AppBar
-  [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2),
+  marginTop: theme.spacing(8),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(8, 2),
     marginTop: theme.spacing(7),
   },
 }));
@@ -46,35 +38,50 @@ const PageTitle = styled(Box)(({ theme }) => ({
 export default function ExpeditionsPage() {
   return (
     <main>
-      <PageContainer maxWidth="xl" config={expeditionsPageConfig}>
+      <PageContainer>
         {/* Page Title */}
         <PageTitle>
-          <Typography
-            variant="h2"
-            component="h1"
-            sx={{
-              fontWeight: 700,
-              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-            }}
-          >
-            {expeditionsPageConfig.title}
-          </Typography>
+          <MuiContainer maxWidth="lg">
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                fontWeight: 700,
+                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                color: 'text.primary',
+                marginBottom: 2,
+              }}
+            >
+              {expeditionsPageConfig.title}
+            </Typography>
+            {expeditionsPageConfig.subtitle && (
+              <Typography
+                variant="h5"
+                component="p"
+                sx={{
+                  color: 'text.secondary',
+                  fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
+                  maxWidth: '800px',
+                  margin: '0 auto',
+                }}
+              >
+                {expeditionsPageConfig.subtitle}
+              </Typography>
+            )}
+          </MuiContainer>
         </PageTitle>
 
         {/* Content Sections */}
-        <Container maxWidth="lg" sx={{ py: 4 }}>
-          {expeditionsPageConfig.content.sections.map((section, index) => (
-            <ContentSection key={index} config={section} />
-          ))}
-        </Container>
+        <Box sx={{ py: { xs: 6, md: 8 } }}>
+          <MuiContainer maxWidth="lg">
+            {expeditionsPageConfig.content.sections.map((section, index) => (
+              <ContentSection key={index} config={section} />
+            ))}
+          </MuiContainer>
+        </Box>
 
         {/* Call to Action - Services Section */}
-        <Container
-          id="other-services"
-          disableGutters
-          maxWidth={false}
-          sx={{ mt: 4 }}
-        >
+        <Box id="other-services" sx={{ backgroundColor: '#F5F5F5' }}>
           <ServicesSection
             config={{
               ...servicesConfig,
@@ -82,16 +89,12 @@ export default function ExpeditionsPage() {
             }}
             hiddenItem={expeditionsPageConfig.cta.hiddenServiceIndex}
           />
-        </Container>
+        </Box>
 
         {/* Footer */}
-        <Container
-          id="contactus-section"
-          disableGutters
-          maxWidth={false}
-        >
+        <Box id="contactus-section">
           <FooterSection config={footerConfig} />
-        </Container>
+        </Box>
       </PageContainer>
     </main>
   );

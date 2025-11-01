@@ -87,6 +87,11 @@ function StatItem({ stat, isVisible, animationDuration }) {
 }
 
 export default function StatsCounter({ config, sx = {} }) {
+  const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   if (!config || !config.stats || config.stats.length === 0) {
     return null;
   }
@@ -98,11 +103,6 @@ export default function StatsCounter({ config, sx = {} }) {
     layout = 'row',
     backgroundColor,
   } = config;
-
-  const [ref, isVisible] = useIntersectionObserver({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
 
   return (
     <SectionContainer ref={ref} bgcolor={backgroundColor} sx={sx}>

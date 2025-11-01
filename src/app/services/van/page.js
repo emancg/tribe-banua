@@ -1,116 +1,274 @@
 'use client';
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Image from 'next/image';
+
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import SimpleContainer from '@/app/ui/layout/container';
+import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import ContactUs from '@/app/ui/sections/contactUs';
-import Footer from '@/app/ui/sections/footer';
-import FeaturedItems from '@/app/ui/layout/featured';
-import Paper from '@mui/material/Paper';
-import SimpleStack from '@/app/ui/layout/stack';
-import Link from 'next/link';
-import StyledLink from '@/app/ui/layout/link';
-import Button from '@mui/material/Button';
-import ServicesStack from '@/app/ui/layout/stack';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
+import ScheduleIcon from '@mui/icons-material/Schedule';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { FooterSection, ServicesSection } from '@/lib/components';
+import { footerConfig } from '../../../../content/sections/footer.config';
+import { servicesConfig } from '../../../../content/sections/services.config';
 
-const PageContainer = styled(Container)(({ theme }) => ({
-    padding: 0,
-    width: '100%',
-    justifyContent: 'center',
-    backgroundImage: `url('../../van-transfer.jpg')`,
-    backgroundBlendMode: 'darken',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    backgroundPositionX: 'center',
-    backgroundSize: 'cover',
-    paddingTop: 60,
+const PageContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
+  width: '100%',
 }));
 
-const PageBox = styled(Box)(({ theme }) => ({
-    // minHeight: '50vh',
-    height: 'auto',
-    backgroundColor: 'transparent',
-    flexGrow: 1,
-    justifyContent: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'justify',
-    color: 'white',
-    width: '100%',
-    marginLeft: '10px',
-    marginRight: '10px',
-    textShadow: '2px 2px 5px black',
+const PageHeader = styled(Box)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
+  padding: theme.spacing(12, 2),
+  textAlign: 'center',
+  marginTop: theme.spacing(8),
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(8, 2),
+    marginTop: theme.spacing(7),
+  },
 }));
 
-const ItemBox = styled(Paper)(({ theme }) => ({
-    width: 'auto',
-    height: '19vh',
-    padding: theme.spacing(2),
-    ...theme.typography.body2,
-    textAlign: 'center',
-    backgroundSize: 'cover',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundPosition: 'left',
-    justifyContent: 'end',
-    color: 'white',
-    // textShadow: '2px 2px 5px white',
-    cursor: 'pointer',
-    borderRadius: '25px',
-    marginLeft: '25px',
-    marginRight: '25px',
-    marginBottom: '15px',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    backgroundBlendMode: 'darken',
-    // borderLeft: '6px solid gray',
-    boxShadow: '-2px 2px gray'
+const ContentSection = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(8, 2),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(6, 2),
+  },
 }));
 
-export default function ExpeditionsPage() {
-    return (
-        <PageContainer maxWidth='xl'>
-            {/* <SimpleContainer>
-                    <PageBox maxWidth='sm' sx={{ minHeight: '0', alignItems: 'start', paddingTop: '10px' }}>
-                        <Link href={'/'}><Button variant='text' color='warning' size='large'>Home</Button></Link>
-                    </PageBox>
-                </SimpleContainer> */}
-            <SimpleContainer>
-                <PageBox maxWidth='sm'>
-                    <h1>VAN TRANSFER</h1>
-                    {/* <Box position={'relative'} height={'100%'} sx={{width: '90%', boxShadow: '10px 10px 10px black'}}>
-                            <Image
-                                fill
-                                src="/expeditions-hero.jpg"
-                                alt="expeditions"
-                            />
-                        </Box> */}
+const InfoCard = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(4),
+  backgroundColor: '#FFFFFF',
+  border: `1px solid ${theme.palette.divider}`,
+  borderRadius: '4px',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  textAlign: 'center',
+}));
 
-                    <p><strong>Route:</strong> Seamless transit between Puerto Princesa City and El Nido (vice versa) at a rate of 650 PHP per person</p>
-                    <p><strong>Availability:</strong> From 4 am to 7 pm for pickup and dropoff, with airport pickup available</p>
-                    <p><strong>Travel Time:</strong> Anticipate a travel duration of 5 to 6 hours</p>
-                    <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
+const IconWrapper = styled(Box)(({ theme }) => ({
+  width: '60px',
+  height: '60px',
+  borderRadius: '50%',
+  backgroundColor: '#F5F5F5',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginBottom: theme.spacing(2),
+  '& svg': {
+    fontSize: '2rem',
+    color: theme.palette.primary.main,
+  },
+}));
 
-                    <h2>Ready for the trip?</h2>
-                    <p>If you are, send us a message or connect with us thru our social accounts below.</p>
-                    {/* <Divider sx={{borderColor:'white', width: '25%'}}></Divider> */}
+export default function VanTransferPage() {
+  return (
+    <main>
+      <PageContainer>
+        {/* Page Header */}
+        <PageHeader>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                fontWeight: 700,
+                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                color: 'text.primary',
+                marginBottom: 2,
+              }}
+            >
+              VAN TRANSFER
+            </Typography>
+            <Typography
+              variant="h5"
+              component="p"
+              sx={{
+                color: 'text.secondary',
+                fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
+                maxWidth: '800px',
+                margin: '0 auto',
+              }}
+            >
+              Seamless travel between Puerto Princesa and El Nido
+            </Typography>
+          </Container>
+        </PageHeader>
 
-                </PageBox>
+        {/* Main Content */}
+        <ContentSection>
+          <Container maxWidth="lg">
+            <Grid container spacing={4} sx={{ mb: 6 }}>
+              <Grid item xs={12} md={4}>
+                <InfoCard>
+                  <IconWrapper>
+                    <DirectionsBusIcon />
+                  </IconWrapper>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: '1.125rem',
+                      color: 'text.primary',
+                      mb: 1.5,
+                    }}
+                  >
+                    Route
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '1.0625rem',
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    Seamless transit between Puerto Princesa City and El Nido (vice versa)
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 700,
+                      color: 'primary.main',
+                      mt: 2,
+                    }}
+                  >
+                    650 PHP
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: 'text.secondary',
+                    }}
+                  >
+                    per person
+                  </Typography>
+                </InfoCard>
+              </Grid>
 
+              <Grid item xs={12} md={4}>
+                <InfoCard>
+                  <IconWrapper>
+                    <ScheduleIcon />
+                  </IconWrapper>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: '1.125rem',
+                      color: 'text.primary',
+                      mb: 1.5,
+                    }}
+                  >
+                    Availability
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '1.0625rem',
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    From <strong>4 AM to 7 PM</strong> for pickup and dropoff
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '1.0625rem',
+                      lineHeight: 1.7,
+                      mt: 1,
+                    }}
+                  >
+                    Airport pickup available
+                  </Typography>
+                </InfoCard>
+              </Grid>
 
-            </SimpleContainer>
-            <SimpleContainer><ContactUs></ContactUs></SimpleContainer>
-            <SimpleContainer><Footer></Footer></SimpleContainer>
-            <SimpleContainer><FeaturedItems ></FeaturedItems></SimpleContainer>
+              <Grid item xs={12} md={4}>
+                <InfoCard>
+                  <IconWrapper>
+                    <AccessTimeIcon />
+                  </IconWrapper>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: '1.125rem',
+                      color: 'text.primary',
+                      mb: 1.5,
+                    }}
+                  >
+                    Travel Time
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '1.0625rem',
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    Anticipate a travel duration of <strong>5 to 6 hours</strong>
+                  </Typography>
+                </InfoCard>
+              </Grid>
+            </Grid>
 
-            <SimpleContainer>
-                <PageBox maxWidth='sm' sx={{ textAlign: 'center', paddingTop: '0', justifyContent: 'start' }}>
-                    <h2>SEE MORE OF OUR SERVICES</h2>
-                    <ServicesStack hiddenItem={3} />
-                </PageBox>
-            </SimpleContainer>
-        </PageContainer>
-    );
+            <Box sx={{ textAlign: 'center', mt: 8 }}>
+              <Divider sx={{ mb: 6, borderColor: 'divider' }} />
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.75rem, 4vw, 2.25rem)',
+                  color: 'text.primary',
+                  mb: 3,
+                }}
+              >
+                Ready for the trip?
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: 'text.secondary',
+                  fontSize: '1.0625rem',
+                  lineHeight: 1.7,
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                }}
+              >
+                If you are, send us a message or connect with us through our social accounts below.
+              </Typography>
+            </Box>
+          </Container>
+        </ContentSection>
+
+        {/* Other Services */}
+        <Box sx={{ backgroundColor: '#F5F5F5', py: { xs: 8, md: 12 } }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                textAlign: 'center',
+                mb: 6,
+              }}
+            >
+              SEE MORE OF OUR SERVICES
+            </Typography>
+            <ServicesSection config={servicesConfig} hiddenItem={3} />
+          </Container>
+        </Box>
+
+        {/* Footer */}
+        <FooterSection config={footerConfig} />
+      </PageContainer>
+    </main>
+  );
 }

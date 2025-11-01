@@ -12,7 +12,7 @@ import { footerConfig } from '../sections/footer.config';
 export const homePageConfig = {
   title: "Home",
   background: {
-    image: "/app-bg.jpg"
+    image: null // No background image - minimal clean design
   },
   sections: [
     {
@@ -30,7 +30,7 @@ export const homePageConfig = {
       type: 'whyChooseUs',
       config: whyChooseUsConfig,
       containerProps: {
-        sx: { height: '100vh' }
+        sx: { minHeight: '100vh' }
       }
     },
     // Contact section is currently commented out in original
@@ -44,7 +44,7 @@ export const homePageConfig = {
       type: 'footer',
       config: footerConfig,
       containerProps: {
-        sx: { height: '100vh' }
+        sx: {} // Removed fixed height for natural footer flow
       }
     }
   ]

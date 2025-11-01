@@ -87,26 +87,18 @@ const Indicator = styled(Box)(({ theme, active }) => ({
 }));
 
 export default function TestimonialsCarousel({ config, sx = {} }) {
-  if (!config || !config.testimonials || config.testimonials.length === 0) {
-    return null;
-  }
-
-  const {
-    title = 'What Our Customers Say',
-    testimonials,
-    autoplay = true,
-    interval = 5000,
-    layout = 'carousel',
-    variant = 'card',
-    itemsPerView = 1,
-  } = config;
+  const testimonials = config?.testimonials || [];
+  const autoplay = config?.autoplay ?? true;
+  const interval = config?.interval ?? 5000;
+  const layout = config?.layout || 'carousel';
+  const itemsPerView = config?.itemsPerView ?? 1;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = Math.ceil(testimonials.length / itemsPerView);
 
   // Auto-advance carousel
   useEffect(() => {
-    if (!autoplay || layout !== 'carousel') return;
+    if (!autoplay || layout !== 'carousel' || totalSlides === 0) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
@@ -114,6 +106,15 @@ export default function TestimonialsCarousel({ config, sx = {} }) {
 
     return () => clearInterval(timer);
   }, [autoplay, interval, totalSlides, layout]);
+
+  if (!config || !config.testimonials || config.testimonials.length === 0) {
+    return null;
+  }
+
+  const {
+    title = 'What Our Customers Say',
+    variant = 'card',
+  } = config;
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);

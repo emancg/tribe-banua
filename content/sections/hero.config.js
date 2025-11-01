@@ -3,20 +3,20 @@
  */
 
 export const heroConfig = {
-  title: "Your Once-in-a-Lifetime Tropical Island Boat Expedition Awaits!",
-  subtitle: "", // Optional subtitle
+  title: "Your Once-in-a-Lifetime Tropical Island Expedition Awaits!",
+  subtitle: "Embark on unforgettable journeys through Palawan's hidden paradises. From multi-day expeditions to island hopping adventures, discover the untouched beauty of the Philippines.",
   cta: {
-    text: "Start your Journey",
+    text: "Start Your Journey",
     href: "#services-section"
   },
   background: {
     image: "/heroimg.jpg",
     position: "center",
-    overlay: false, // No overlay color
+    overlay: false, // Handled by component's gradient overlay
   },
   height: "100vh",
   textAlign: "center",
-  contentPosition: "bottom", // Position content at bottom
+  contentPosition: "center", // Modern centered layout
   textShadow: "2px 2px 5px black"
 };
 

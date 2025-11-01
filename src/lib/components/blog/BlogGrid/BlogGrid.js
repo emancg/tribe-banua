@@ -38,6 +38,8 @@ const FilterTabs = styled(Tabs)(({ theme }) => ({
 }));
 
 export default function BlogGrid({ config, sx = {} }) {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
   if (!config || !config.posts || config.posts.length === 0) {
     return null;
   }
@@ -50,8 +52,6 @@ export default function BlogGrid({ config, sx = {} }) {
     categories = [],
     variant = 'card',
   } = config;
-
-  const [selectedCategory, setSelectedCategory] = useState('all');
 
   // Extract categories from posts if not provided
   const allCategories = categories.length > 0

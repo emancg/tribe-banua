@@ -3,75 +3,80 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import Link from 'next/link';
 import { styled } from '@mui/material/styles';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 /**
- * HeroSection Component
+ * Minimal Clean HeroSection Component
  *
- * Full-screen hero section with background image and CTA
- *
- * @param {Object} config - Hero configuration object
- * @param {string} config.title - Main heading text
- * @param {string} config.subtitle - Subheading text (optional)
- * @param {Object} config.cta - Call-to-action button config
- * @param {string} config.cta.text - Button text
- * @param {string} config.cta.href - Button link
- * @param {Object} config.background - Background settings
- * @param {string} config.background.image - Background image URL
- * @param {string} config.background.position - Background position
- * @param {boolean} config.background.overlay - Show overlay
- * @param {string} config.height - Hero height (default: 100vh)
- * @param {string} config.textAlign - Text alignment
- * @param {string} config.contentPosition - Content vertical position (top, center, bottom)
- * @param {string} config.textShadow - Text shadow CSS
+ * Simple, centered hero with plenty of white space
  */
 
-const HeroContainer = styled(Box)(({ theme, config }) => {
-  const contentPositions = {
-    top: 'flex-start',
-    center: 'center',
-    bottom: 'flex-end',
-  };
+const HeroContainer = styled(Box)(({ theme }) => ({
+  minHeight: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#FFFFFF',
+  padding: theme.spacing(8, 3),
 
-  return {
-    height: config?.height || '100vh',
-    padding: theme.spacing(2),
-    paddingBottom: config?.contentPosition === 'bottom' ? 100 : theme.spacing(2),
-    textAlign: config?.textAlign || 'center',
-    backgroundImage: config?.background?.image
-      ? `url('${config.background.image}')`
-      : 'none',
-    backgroundSize: 'cover',
-    backgroundPosition: config?.background?.position || 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: contentPositions[config?.contentPosition] || 'flex-end',
-    color: 'white',
-    textShadow: config?.textShadow || 'none',
-    boxShadow: '1px 2px 25px black',
-    position: 'relative',
+  [theme.breakpoints.down('md')]: {
+    minHeight: '85vh',
+    padding: theme.spacing(6, 2),
+  },
+}));
 
-    // Overlay
-    ...(config?.background?.overlay && {
-      '&::before': {
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: config.background.overlayColor || 'rgba(0, 0, 0, 0.3)',
-        zIndex: 1,
-      }
-    }),
-  };
-});
+const ContentWrapper = styled(Container)(({ theme }) => ({
+  textAlign: 'center',
+  maxWidth: '900px !important',
+  padding: theme.spacing(8, 4),
 
-const ContentWrapper = styled(Box)({
-  position: 'relative',
-  zIndex: 2,
-});
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(6, 3),
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(4, 2),
+  },
+}));
+
+const Title = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+  lineHeight: 1.2,
+  color: theme.palette.text.primary,
+  marginBottom: theme.spacing(3),
+  letterSpacing: '-0.02em',
+}));
+
+const Subtitle = styled(Typography)(({ theme }) => ({
+  fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
+  lineHeight: 1.7,
+  color: theme.palette.text.secondary,
+  marginBottom: theme.spacing(6),
+  maxWidth: '750px',
+  margin: '0 auto',
+  marginBottom: theme.spacing(6),
+
+  [theme.breakpoints.up('md')]: {
+    marginBottom: theme.spacing(7),
+  },
+}));
+
+const CTAButton = styled(Button)(({ theme }) => ({
+  fontSize: '1.0625rem',
+  fontWeight: 500,
+  padding: '14px 32px',
+  borderRadius: theme.shape.borderRadius,
+  textTransform: 'none',
+
+  [theme.breakpoints.down('sm')]: {
+    padding: '12px 24px',
+    fontSize: '1rem',
+  },
+}));
 
 export default function HeroSection({ config }) {
   if (!config) {
@@ -79,43 +84,28 @@ export default function HeroSection({ config }) {
   }
 
   return (
-    <HeroContainer config={config}>
+    <HeroContainer>
       <ContentWrapper>
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            fontWeight: 700,
-            mb: config.subtitle ? 2 : 4,
-          }}
-        >
+        <Title variant="h1" component="h1">
           {config.title}
-        </Typography>
+        </Title>
 
         {config.subtitle && (
-          <Typography
-            variant="h5"
-            component="h2"
-            sx={{ mb: 4 }}
-          >
+          <Subtitle variant="h5" component="p">
             {config.subtitle}
-          </Typography>
+          </Subtitle>
         )}
 
         {config.cta && (
           <Link href={config.cta.href} style={{ textDecoration: 'none' }}>
-            <Button
+            <CTAButton
               variant="contained"
               color="primary"
               size="large"
-              sx={{
-                px: 4,
-                py: 1.5,
-                fontSize: '1.1rem',
-              }}
+              endIcon={<ArrowForwardIcon />}
             >
               {config.cta.text}
-            </Button>
+            </CTAButton>
           </Link>
         )}
       </ContentWrapper>
