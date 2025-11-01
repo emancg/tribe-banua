@@ -25,42 +25,37 @@ import Container from '@mui/material/Container';
  * @param {Object} sx - Additional MUI sx styling
  */
 
-const CTAContainer = styled(Box)(({ theme, variant, bgcolor, bgimage, textcolor }) => {
+const CTAContainer = styled(Box)(({ theme, variant, bgcolor }) => {
   const baseStyles = {
-    padding: theme.spacing(8, 2),
+    padding: theme.spacing(12, 2),
     textAlign: 'center',
     position: 'relative',
     overflow: 'hidden',
-    color: textcolor || 'white',
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(6, 2),
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(8, 2),
     },
   };
 
   // Variant-specific styles
   const variantStyles = {
-    gradient: {
-      background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-    },
     solid: {
-      backgroundColor: bgcolor || theme.palette.primary.main,
+      backgroundColor: bgcolor || '#2196F3',
+      color: '#FFFFFF',
     },
     outlined: {
-      backgroundColor: 'transparent',
-      border: `3px solid ${theme.palette.primary.main}`,
+      backgroundColor: '#FFFFFF',
+      border: `2px solid ${theme.palette.divider}`,
       color: theme.palette.text.primary,
     },
-    image: {
-      backgroundImage: bgimage ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${bgimage}')` : 'none',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
+    minimal: {
+      backgroundColor: '#F5F5F5',
+      color: theme.palette.text.primary,
     },
   };
 
   return {
     ...baseStyles,
-    ...(variantStyles[variant] || variantStyles.gradient),
+    ...(variantStyles[variant] || variantStyles.solid),
   };
 });
 
@@ -92,30 +87,26 @@ export default function CTABanner({ config, sx = {} }) {
     description,
     primaryCTA,
     secondaryCTA,
-    variant = 'gradient',
+    variant = 'solid',
     backgroundColor,
-    backgroundImage,
-    textColor,
   } = config;
 
-  const isPrimaryOutlined = variant === 'outlined';
+  const isOutlined = variant === 'outlined' || variant === 'minimal';
 
   return (
     <CTAContainer
       variant={variant}
       bgcolor={backgroundColor}
-      bgimage={backgroundImage}
-      textcolor={textColor}
       sx={sx}
     >
       <CTAContent>
         <Typography
-          variant="h3"
+          variant="h2"
           component="h2"
           sx={{
             fontWeight: 700,
-            marginBottom: 2,
-            textShadow: variant === 'outlined' ? 'none' : '2px 2px 4px rgba(0,0,0,0.3)',
+            fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+            marginBottom: 3,
           }}
         >
           {title}
@@ -123,12 +114,15 @@ export default function CTABanner({ config, sx = {} }) {
 
         {description && (
           <Typography
-            variant="h6"
+            variant="body1"
             sx={{
-              marginBottom: 3,
-              opacity: 0.95,
-              lineHeight: 1.6,
-              textShadow: variant === 'outlined' ? 'none' : '1px 1px 2px rgba(0,0,0,0.2)',
+              marginBottom: 5,
+              fontSize: '1.125rem',
+              lineHeight: 1.7,
+              maxWidth: '700px',
+              margin: '0 auto',
+              marginBottom: 5,
+              opacity: 0.9,
             }}
           >
             {description}
@@ -138,24 +132,20 @@ export default function CTABanner({ config, sx = {} }) {
         <ButtonGroup>
           {primaryCTA && (
             <Button
-              variant={isPrimaryOutlined ? 'contained' : 'contained'}
+              variant="contained"
               size="large"
               href={primaryCTA.href}
               sx={{
                 paddingX: 4,
                 paddingY: 1.5,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                borderRadius: 2,
+                fontSize: '1.0625rem',
+                fontWeight: 500,
                 textTransform: 'none',
-                backgroundColor: isPrimaryOutlined ? 'primary.main' : 'white',
-                color: isPrimaryOutlined ? 'white' : 'primary.main',
+                backgroundColor: isOutlined ? 'primary.main' : 'white',
+                color: isOutlined ? 'white' : 'primary.main',
                 '&:hover': {
-                  backgroundColor: isPrimaryOutlined ? 'primary.dark' : 'rgba(255, 255, 255, 0.9)',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                  backgroundColor: isOutlined ? 'primary.dark' : 'rgba(255, 255, 255, 0.9)',
                 },
-                transition: 'all 0.3s ease',
               }}
             >
               {primaryCTA.text}
@@ -170,21 +160,18 @@ export default function CTABanner({ config, sx = {} }) {
               sx={{
                 paddingX: 4,
                 paddingY: 1.5,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                borderRadius: 2,
+                fontSize: '1.0625rem',
+                fontWeight: 500,
                 textTransform: 'none',
-                borderColor: isPrimaryOutlined ? 'primary.main' : 'white',
-                color: isPrimaryOutlined ? 'primary.main' : 'white',
+                borderColor: isOutlined ? 'primary.main' : 'white',
+                color: isOutlined ? 'primary.main' : 'white',
                 borderWidth: 2,
                 '&:hover': {
                   borderWidth: 2,
-                  backgroundColor: isPrimaryOutlined
-                    ? 'rgba(31, 147, 182, 0.1)'
+                  backgroundColor: isOutlined
+                    ? 'rgba(33, 150, 243, 0.08)'
                     : 'rgba(255, 255, 255, 0.1)',
-                  transform: 'translateY(-2px)',
                 },
-                transition: 'all 0.3s ease',
               }}
             >
               {secondaryCTA.text}

@@ -17,39 +17,52 @@ import { footerConfig } from '../../../content/sections/footer.config';
 const contactHeroConfig = {
   title: "Get In Touch",
   subtitle: "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-  backgroundImage: "/services/island-tours.jpg",
-  height: "50vh",
 };
 
 const contactFormConfig = {
   title: "Send Us a Message",
   description: "Fill out the form below and our team will get back to you within 24 hours.",
   showSubject: true,
-  variant: "card",
+  variant: "minimal",
 };
 
 const newsletterConfig = {
   title: "Stay Updated",
   description: "Subscribe to our newsletter for the latest updates, special offers, and travel tips.",
-  variant: "card",
+  variant: "minimal",
 };
 
 const ContactInfoCard = ({ icon: Icon, title, content }) => (
   <Box
     sx={{
       textAlign: 'center',
-      p: 3,
-      borderRadius: 2,
-      backgroundColor: 'white',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      p: 4,
+      borderRadius: '4px',
+      backgroundColor: '#FFFFFF',
+      border: '1px solid',
+      borderColor: 'divider',
       height: '100%',
     }}
   >
-    <Icon sx={{ fontSize: 40, color: 'primary.main', mb: 2 }} />
-    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+    <Box
+      sx={{
+        width: '60px',
+        height: '60px',
+        borderRadius: '50%',
+        backgroundColor: '#F5F5F5',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '0 auto',
+        mb: 3,
+      }}
+    >
+      <Icon sx={{ fontSize: '2rem', color: 'primary.main' }} />
+    </Box>
+    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1.5, fontSize: '1.125rem' }}>
       {title}
     </Typography>
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.9375rem' }}>
       {content}
     </Typography>
   </Box>
@@ -64,9 +77,9 @@ export default function ContactPage() {
       </Box>
 
       {/* Contact Information Cards */}
-      <Box sx={{ py: 6, backgroundColor: 'grey.50' }}>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#FFFFFF' }}>
         <Container maxWidth="lg">
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
               <ContactInfoCard
                 icon={EmailIcon}
@@ -93,14 +106,14 @@ export default function ContactPage() {
       </Box>
 
       {/* Contact Form Section */}
-      <Box sx={{ py: 8 }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#F5F5F5' }}>
         <Container maxWidth="md">
           <ContactForm config={contactFormConfig} />
         </Container>
       </Box>
 
       {/* Newsletter Section */}
-      <Box sx={{ py: 8, backgroundColor: 'grey.50' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#FFFFFF' }}>
         <Container maxWidth="sm">
           <NewsletterSignup config={newsletterConfig} />
         </Container>

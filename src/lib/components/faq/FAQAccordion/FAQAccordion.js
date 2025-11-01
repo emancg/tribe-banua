@@ -74,6 +74,10 @@ const StyledAccordion = styled(MuiAccordion)(({ theme, variant }) => {
 });
 
 export default function FAQAccordion({ config, sx = {} }) {
+  const allowMultiple = config?.allowMultiple || false;
+  const [expanded, setExpanded] = useState(allowMultiple ? [] : false);
+  const [searchQuery, setSearchQuery] = useState('');
+
   if (!config || !config.faqs || config.faqs.length === 0) {
     return null;
   }
@@ -81,13 +85,9 @@ export default function FAQAccordion({ config, sx = {} }) {
   const {
     title = 'Frequently Asked Questions',
     faqs,
-    allowMultiple = false,
     searchable = true,
     variant = 'outlined',
   } = config;
-
-  const [expanded, setExpanded] = useState(allowMultiple ? [] : false);
-  const [searchQuery, setSearchQuery] = useState('');
 
   const handleAccordionChange = (panel) => (event, isExpanded) => {
     if (allowMultiple) {

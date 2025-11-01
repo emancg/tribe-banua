@@ -43,6 +43,8 @@ const BillingToggle = styled(ToggleButtonGroup)(({ theme }) => ({
 }));
 
 export default function PricingTable({ config, sx = {} }) {
+  const [billingPeriod, setBillingPeriod] = useState('monthly');
+
   if (!config || !config.plans || config.plans.length === 0) {
     return null;
   }
@@ -57,8 +59,6 @@ export default function PricingTable({ config, sx = {} }) {
     variant = 'card',
     backgroundColor,
   } = config;
-
-  const [billingPeriod, setBillingPeriod] = useState('monthly');
 
   const handleBillingChange = (event, newPeriod) => {
     if (newPeriod !== null) {

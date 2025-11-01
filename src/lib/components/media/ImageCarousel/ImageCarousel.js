@@ -85,24 +85,13 @@ const Indicator = styled(Box)(({ active }) => ({
 }));
 
 export default function ImageCarousel({ config, sx = {} }) {
-  if (!config || !config.images || config.images.length === 0) {
-    return null;
-  }
-
-  const {
-    images,
-    autoplay = false,
-    interval = 5000,
-    navigation = 'both',
-    variant = 'slide',
-    height = '500px',
-    borderRadius = '8px',
-  } = config;
-
   const [currentSlide, setCurrentSlide] = useState(0);
+  const images = config?.images || [];
+  const autoplay = config?.autoplay ?? false;
+  const interval = config?.interval ?? 5000;
 
   useEffect(() => {
-    if (!autoplay) return;
+    if (!autoplay || images.length === 0) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -110,6 +99,17 @@ export default function ImageCarousel({ config, sx = {} }) {
 
     return () => clearInterval(timer);
   }, [autoplay, interval, images.length]);
+
+  if (!config || !config.images || config.images.length === 0) {
+    return null;
+  }
+
+  const {
+    navigation = 'both',
+    variant = 'slide',
+    height = '500px',
+    borderRadius = '8px',
+  } = config;
 
   const handlePrevious = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);

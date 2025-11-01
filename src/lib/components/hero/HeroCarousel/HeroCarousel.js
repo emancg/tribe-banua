@@ -124,24 +124,13 @@ const Indicator = styled(Box)(({ theme, active }) => ({
 }));
 
 export default function HeroCarousel({ config, sx = {} }) {
-  if (!config || !config.slides || config.slides.length === 0) {
-    return null;
-  }
-
-  const {
-    slides,
-    autoplay = true,
-    interval = 5000,
-    showArrows = true,
-    showIndicators = true,
-    height = '90vh',
-    overlayOpacity = 0.3,
-  } = config;
-
   const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = config?.slides || [];
+  const autoplay = config?.autoplay ?? true;
+  const interval = config?.interval ?? 5000;
 
   useEffect(() => {
-    if (!autoplay) return;
+    if (!autoplay || slides.length === 0) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -149,6 +138,17 @@ export default function HeroCarousel({ config, sx = {} }) {
 
     return () => clearInterval(timer);
   }, [autoplay, interval, slides.length]);
+
+  if (!config || !config.slides || config.slides.length === 0) {
+    return null;
+  }
+
+  const {
+    showArrows = true,
+    showIndicators = true,
+    height = '90vh',
+    overlayOpacity = 0.3,
+  } = config;
 
   const handlePrevious = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);

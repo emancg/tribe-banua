@@ -108,6 +108,9 @@ const NavigationButton = styled(IconButton)(({ theme }) => ({
 }));
 
 export default function ImageGallery({ config, sx = {} }) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!config || !config.images || config.images.length === 0) {
     return null;
   }
@@ -119,9 +122,6 @@ export default function ImageGallery({ config, sx = {} }) {
     columns = 3,
     lightbox = true,
   } = config;
-
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleImageClick = (index) => {
     if (lightbox) {

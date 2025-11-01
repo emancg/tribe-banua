@@ -21,12 +21,10 @@ import { footerConfig } from '../../../content/sections/footer.config';
 const aboutHeroConfig = {
   title: "About Tribe Banua",
   subtitle: "Discover the story behind Palawan's most trusted adventure company",
-  backgroundImage: "/services/expeditions.jpg",
-  ctaButton: {
+  cta: {
     text: "Contact Us",
-    href: "#contactus-section"
+    href: "/contact"
   },
-  height: "60vh",
 };
 
 export default function AboutPage() {

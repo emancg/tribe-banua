@@ -1,66 +1,101 @@
 'use client';
 
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Link from 'next/link';
+import Image from 'next/image';
 import { styled } from '@mui/material/styles';
 
 /**
- * ServicesSection Component
+ * Minimal Clean ServicesSection Component
  *
- * Display services in a vertical stack with background images
- *
- * @param {Object} config - Services configuration object
- * @param {string} config.title - Section title
- * @param {Array} config.items - Array of service items
- * @param {string} config.items[].title - Service title
- * @param {string} config.items[].image - Background image URL
- * @param {string} config.items[].description - Service description
- * @param {string} config.items[].href - Link to service page
- * @param {number} config.hiddenItem - Index of item to hide (optional)
- * @param {string} config.id - Section ID for anchor links
+ * Simple grid of service cards with images
  */
 
 const SectionContainer = styled(Box)(({ theme }) => ({
-  flexGrow: 1,
-  justifyContent: 'center',
-  textAlign: 'center',
-  paddingTop: 10,
-  minHeight: '50vh',
-  backgroundSize: 'cover',
-  backgroundColor: 'transparent',
-  color: 'white',
-  '& h1': {
-    textShadow: '5px 5px 5px black',
-  }
+  padding: theme.spacing(12, 2),
+  backgroundColor: '#FAFAFA',
+
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(8, 2),
+  },
 }));
 
-const ServiceItem = styled(Paper)(({ theme }) => ({
-  width: 'auto',
-  height: '19vh',
-  padding: theme.spacing(2),
+const SectionHeader = styled(Box)(({ theme }) => ({
   textAlign: 'center',
-  backgroundSize: 'cover',
-  backgroundPosition: 'left',
+  marginBottom: theme.spacing(8),
+
+  [theme.breakpoints.down('md')]: {
+    marginBottom: theme.spacing(6),
+  },
+}));
+
+const SectionTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+  color: theme.palette.text.primary,
+  marginBottom: theme.spacing(2),
+}));
+
+const ServiceCard = styled(Card)(({ theme }) => ({
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'end',
-  color: 'white',
+  borderRadius: theme.shape.borderRadius,
+  border: `1px solid ${theme.palette.divider}`,
+  transition: 'all 0.2s ease',
   cursor: 'pointer',
-  borderRadius: '25px',
-  marginLeft: '25px',
-  marginRight: '25px',
-  marginBottom: '15px',
-  backgroundColor: 'rgba(0, 0, 0, 0.3)',
-  backgroundBlendMode: 'darken',
-  boxShadow: '1px 5px 10px black',
-  textShadow: '1px 1px 10px black',
-  transition: 'transform 0.2s ease-in-out',
+
   '&:hover': {
-    transform: 'scale(1.02)',
-  }
+    borderColor: theme.palette.primary.main,
+    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
+  },
+}));
+
+const ImageContainer = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  height: '200px',
+  width: '100%',
+  overflow: 'hidden',
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  backgroundColor: '#F5F5F5',
+
+  '& img': {
+    objectFit: 'cover',
+    transition: 'transform 0.3s ease',
+  },
+
+  '&:hover img': {
+    transform: 'scale(1.05)',
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    height: '160px',
+  },
+}));
+
+const ServiceContent = styled(CardContent)(({ theme }) => ({
+  padding: theme.spacing(3),
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
+}));
+
+const ServiceTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  fontSize: '1.25rem',
+  color: theme.palette.text.primary,
+  marginBottom: theme.spacing(1.5),
+}));
+
+const ServiceDescription = styled(Typography)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  lineHeight: 1.7,
+  fontSize: '0.9375rem',
 }));
 
 export default function ServicesSection({ config, hiddenItem }) {
@@ -68,53 +103,55 @@ export default function ServicesSection({ config, hiddenItem }) {
     return null;
   }
 
-  // Use hiddenItem prop if provided, otherwise use config.hiddenItem
   const hideIndex = hiddenItem !== undefined ? hiddenItem : config.hiddenItem;
 
   return (
-    <SectionContainer id={config.id} maxWidth="sm">
-      {config.title && (
-        <Typography variant="h3" component="h1" gutterBottom>
-          {config.title}
-        </Typography>
-      )}
+    <SectionContainer id={config.id}>
+      <Container maxWidth="lg">
+        <SectionHeader>
+          <SectionTitle variant="h2" component="h2">
+            {config.title || 'Our Services'}
+          </SectionTitle>
+        </SectionHeader>
 
-      <Box sx={{ width: '100%' }}>
-        <Stack spacing={0}>
+        <Grid container spacing={4}>
           {config.items.map((item, index) => {
-            // Skip rendering if this is the hidden item
             if (hideIndex !== undefined && index === hideIndex) {
               return null;
             }
 
             return (
-              <Link
-                key={index}
-                href={item.href}
-                style={{ textDecoration: 'none' }}
-              >
-                <ServiceItem
-                  variant="elevation"
-                  elevation={16}
-                  sx={{
-                    backgroundImage: `url('${item.image}')`,
-                    backgroundPositionY: item.backgroundPositionY || 'center',
-                  }}
-                >
-                  <Typography variant="h5" component="h2">
-                    {item.title}
-                  </Typography>
-                  {item.description && (
-                    <Typography variant="body2" sx={{ mt: 1 }}>
-                      {item.description}
-                    </Typography>
-                  )}
-                </ServiceItem>
-              </Link>
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Link href={item.href} style={{ textDecoration: 'none' }}>
+                  <ServiceCard elevation={0}>
+                    <ImageContainer>
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
+                    </ImageContainer>
+
+                    <ServiceContent>
+                      <ServiceTitle variant="h6" component="h3">
+                        {item.title}
+                      </ServiceTitle>
+
+                      {item.description && (
+                        <ServiceDescription variant="body2">
+                          {item.description}
+                        </ServiceDescription>
+                      )}
+                    </ServiceContent>
+                  </ServiceCard>
+                </Link>
+              </Grid>
             );
           })}
-        </Stack>
-      </Box>
+        </Grid>
+      </Container>
     </SectionContainer>
   );
 }

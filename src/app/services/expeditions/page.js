@@ -1,173 +1,213 @@
 'use client';
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Image from 'next/image';
+
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import SimpleContainer from '@/app/ui/layout/container';
+import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import ContactUs from '@/app/ui/sections/contactUs';
-import Footer from '@/app/ui/sections/footer';
-import FeaturedItems from '@/app/ui/layout/featured';
-import Paper from '@mui/material/Paper';
-import SimpleStack from '@/app/ui/layout/stack';
+import Image from 'next/image';
 import Link from 'next/link';
-import StyledLink from '@/app/ui/layout/link';
-import Button from '@mui/material/Button';
-import ServicesStack from '@/app/ui/layout/stack';
+import { styled } from '@mui/material/styles';
+import { FooterSection, ServicesSection } from '@/lib/components';
+import { footerConfig } from '../../../../content/sections/footer.config';
+import { servicesConfig } from '../../../../content/sections/services.config';
 
-const PageContainer = styled(Container)(({ theme }) => ({
-    padding: 0,
-    width: '100%',
-    justifyContent: 'center',
-    backgroundImage: `url('../../expeditions-bg.jpg')`,
-    // backgroundBlendMode: 'darken',
-    // backgroundColor: '#614e72',
-    backgroundSize: 'cover',
-    paddingTop: 60,
-    color: '#F9EA9A'
+const PageContainer = styled(Box)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
+  width: '100%',
 }));
 
-const PageBox = styled(Box)(({ theme }) => ({
-    minHeight: '100vh',
-    height: 'auto',
-    backgroundColor: 'transparent',
-    flexGrow: 1,
-    justifyContent: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    // textAlign: 'justify',
-    color: 'white',
-    width: '100%',
-    marginLeft: '10px',
-    marginRight: '10px',
-    textShadow: '2px 2px 5px black',
-    h3:{
-        textAlign: 'left',
-    },
-    p:{
-        textAlign: 'justify',
-    }
+const PageHeader = styled(Box)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
+  padding: theme.spacing(12, 2),
+  textAlign: 'center',
+  marginTop: theme.spacing(8),
+  borderBottom: `1px solid ${theme.palette.divider}`,
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(8, 2),
+    marginTop: theme.spacing(7),
+  },
 }));
 
-const ItemBox = styled(Paper)(({ theme }) => ({
-    width: 'auto',
-    height: '19vh',
-    padding: theme.spacing(2),
-    ...theme.typography.body2,
-    textAlign: 'center',
-    backgroundSize: 'cover',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundPosition: 'left',
-    justifyContent: 'end',
-    color: 'white',
-    // textShadow: '2px 2px 5px white',
-    cursor: 'pointer',
-    borderRadius: '25px',
-    marginLeft: '25px',
-    marginRight: '25px',
-    marginBottom: '15px',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    backgroundBlendMode: 'darken',
-    // borderLeft: '6px solid gray',
-    boxShadow: '-2px 2px gray'
+const ContentSection = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(8, 2),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(6, 2),
+  },
+}));
+
+const SectionTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+  color: theme.palette.text.primary,
+  marginBottom: theme.spacing(3),
+  marginTop: theme.spacing(6),
+}));
+
+const BodyText = styled(Typography)(({ theme }) => ({
+  fontSize: '1.0625rem',
+  lineHeight: 1.7,
+  color: theme.palette.text.secondary,
+  marginBottom: theme.spacing(2.5),
 }));
 
 export default function ExpeditionsPage() {
-    return (
-        <PageContainer maxWidth='xl'>
-            {/* <SimpleContainer>
-                    <PageBox maxWidth='sm' sx={{ minHeight: '0', alignItems: 'start', paddingTop: '10px' }}>
-                        <Link href={'/'}><Button variant='text' color='warning' size='large'>Home</Button></Link>
-                    </PageBox>
-                </SimpleContainer> */}
-            <SimpleContainer>
-                <PageBox maxWidth='sm'>
-                    <h1>EXPEDITIONS</h1>
-                    {/* <Box position={'relative'} height={'100%'} sx={{width: '90%', boxShadow: '10px 10px 10px black'}}>
-                            <Image
-                                fill
-                                src="/expeditions-hero.jpg"
-                                alt="expeditions"
-                            />
-                        </Box> */}
+  return (
+    <main>
+      <PageContainer>
+        {/* Page Header */}
+        <PageHeader>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                fontWeight: 700,
+                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                color: 'text.primary',
+                marginBottom: 2,
+              }}
+            >
+              EXPEDITIONS
+            </Typography>
+            <Typography
+              variant="h5"
+              component="p"
+              sx={{
+                color: 'text.secondary',
+                fontSize: 'clamp(1.125rem, 2vw, 1.375rem)',
+                maxWidth: '800px',
+                margin: '0 auto',
+              }}
+            >
+              Experience the adventure of a lifetime with Tribe Banua
+            </Typography>
+          </Container>
+        </PageHeader>
 
-                    <h3>What is the Tribe Banua Expedition?</h3>
-                    <p>Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks and explore tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan&apos;s culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.</p>
-                    <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
+        {/* Main Content */}
+        <ContentSection>
+          <Container maxWidth="md">
+            <SectionTitle variant="h2">
+              What is the Tribe Banua Expedition?
+            </SectionTitle>
+            <BodyText>
+              Embark on a 3-day boat expedition from Linapacan to Culion, Palawan, and be immersed in an array of unforgettable experiences. Snorkel amidst vibrant coral reefs, encountering a kaleidoscope of marine life. Visit remote tribe villages, engaging with locals, witnessing traditional dances, and learning about their customs. Navigate through mangrove forests on kayaks and explore tranquil waterways. Spend nights in native houses, embracing the authentic charm of Palawan's culture. This expedition promises an extraordinary blend of adventure, cultural immersion, and natural beauty, making it an experience of a lifetime.
+            </BodyText>
 
-                    <h3>What to expect from this grand tour?</h3>
-                    <p>This expedition is packed with adventure and fun experiences! For your reference, see the itinerary below.</p>
-                    <Link target='_blank' href="/expedition-activities.png" >
-                        <Box maxWidth='sm'>
-                            <Image
-                                height={900}
-                                width={360}
-                                src="/expedition-activities.png"
-                                alt="expedition activities"
-                            />
-                        </Box>
-                    </Link>
-                    <h3>INCLUSIONS AND REMINDERS</h3>
-                    <p>Hotel pick-up's between 8:00-8:30 am. Pro tip: grab breakfast at your hotel since we're only dishing out lunch and dinner on day one. We promise our food's better, though!</p>
-                    <p>Days two and three? We've got you covered from sunrise to sunset with breakfast, lunch, and dinner. No hungry tummies allowed!</p>
-                    <p>When the sun dips below the horizon, it's time for the real party! Enjoy bottomless Rum and Coke under the stars, with a bit of Red Horse Beer to keep things interesting.</p>
-                    <p>Bringing your own drinks? Absolutely! Just stash your stash in the boat's cooler and sip at your leisure.</p>
-                    <p>As for where you'll rest your weary head, it's all about the Native House vibes. Think cozy, think comfy, think... no room service! But hey, it's all part of the adventure, right? 🌟</p>
+            <Divider sx={{ my: 4, borderColor: 'divider' }} />
 
-                    <h3>What to bring?</h3>
-                    <p>
-                        Prescribed Medications: Don't forget to inform the crew of any medical conditions and bring enough medication. Better safe than sorry, right?
-                    </p>
-                    <p>
-                        Towels: Pack your own towels for bathing and washing up at the campsites. Plus, we'll throw in an extra one for good measure.
-                    </p>
-                    <p>
-                        Sunscreen and Solar Protection: Palawan's sunny disposition is delightful, but don't forget your sunscreen, hat, and sunglasses to keep those rays at bay.
-                    </p>
-                    <p>
-                        Mosquito Repellent: Stay bug-free with some repellent, especially during dusk and dawn. Those mosquitoes can be pesky!
-                    </p>
-                    <p>
-                        A Dry Bag: Keep your gear dry with a waterproof bag, especially handy when traveling by kayak. Think of it as your trusty sidekick for the journey.
-                    </p>
-                    <p>
-                        Water Shoes: While snorkeling gear is provided, water shoes add an extra layer of comfort for those beach walks. Trust us, your feet will thank you.
-                    </p>
-                    <h3>What to prepare?</h3>
-                    <p>
-                        Organize Your Luggage: Travel light by bringing essentials in a backpack or dry bag. Leave the rest in your luggage, safely stowed away on the boat.
-                    </p>
-                    <p>
-                        Protect Your Gadgets and Documents: Even though the odds of a soggy mishap are low, it never hurts to be cautious. Keep your gadgets and documents in a waterproof bag, just in case.
-                    </p>
-                    <p>
-                        With these essentials in tow, you're all set for an unforgettable expedition!
-                    </p>
+            <SectionTitle variant="h2">
+              What to expect from this grand tour?
+            </SectionTitle>
+            <BodyText>
+              This expedition is packed with adventure and fun experiences! For your reference, see the itinerary below.
+            </BodyText>
+            <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
+              <Link target="_blank" href="/expedition-activities.png">
+                <Box sx={{
+                  maxWidth: '360px',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                  borderRadius: '4px',
+                  overflow: 'hidden'
+                }}>
+                  <Image
+                    height={900}
+                    width={360}
+                    src="/expedition-activities.png"
+                    alt="expedition activities"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                </Box>
+              </Link>
+            </Box>
 
+            <SectionTitle variant="h2">
+              INCLUSIONS AND REMINDERS
+            </SectionTitle>
+            <BodyText>
+              Hotel pick-up's between 8:00-8:30 am. Pro tip: grab breakfast at your hotel since we're only dishing out lunch and dinner on day one. We promise our food's better, though!
+            </BodyText>
+            <BodyText>
+              Days two and three? We've got you covered from sunrise to sunset with breakfast, lunch, and dinner. No hungry tummies allowed!
+            </BodyText>
+            <BodyText>
+              When the sun dips below the horizon, it's time for the real party! Enjoy bottomless Rum and Coke under the stars, with a bit of Red Horse Beer to keep things interesting.
+            </BodyText>
+            <BodyText>
+              Bringing your own drinks? Absolutely! Just stash your stash in the boat's cooler and sip at your leisure.
+            </BodyText>
+            <BodyText>
+              As for where you'll rest your weary head, it's all about the Native House vibes. Think cozy, think comfy, think... no room service! But hey, it's all part of the adventure, right? 🌟
+            </BodyText>
 
-                    <Divider sx={{ borderColor: 'white', width: '25%' }}></Divider>
+            <SectionTitle variant="h2">
+              What to bring?
+            </SectionTitle>
+            <BodyText>
+              <strong>Prescribed Medications:</strong> Don't forget to inform the crew of any medical conditions and bring enough medication. Better safe than sorry, right?
+            </BodyText>
+            <BodyText>
+              <strong>Towels:</strong> Pack your own towels for bathing and washing up at the campsites. Plus, we'll throw in an extra one for good measure.
+            </BodyText>
+            <BodyText>
+              <strong>Sunscreen and Solar Protection:</strong> Palawan's sunny disposition is delightful, but don't forget your sunscreen, hat, and sunglasses to keep those rays at bay.
+            </BodyText>
+            <BodyText>
+              <strong>Mosquito Repellent:</strong> Stay bug-free with some repellent, especially during dusk and dawn. Those mosquitoes can be pesky!
+            </BodyText>
+            <BodyText>
+              <strong>A Dry Bag:</strong> Keep your gear dry with a waterproof bag, especially handy when traveling by kayak. Think of it as your trusty sidekick for the journey.
+            </BodyText>
+            <BodyText>
+              <strong>Water Shoes:</strong> While snorkeling gear is provided, water shoes add an extra layer of comfort for those beach walks. Trust us, your feet will thank you.
+            </BodyText>
 
-                    <h3>Are you ready for the tour of a lifetime?</h3>
-                    <p>If you are, send us a message or connect with us thru our social accounts below.</p>
-                    {/* <Divider sx={{borderColor:'white', width: '25%'}}></Divider> */}
+            <SectionTitle variant="h2">
+              What to prepare?
+            </SectionTitle>
+            <BodyText>
+              <strong>Organize Your Luggage:</strong> Travel light by bringing essentials in a backpack or dry bag. Leave the rest in your luggage, safely stowed away on the boat.
+            </BodyText>
+            <BodyText>
+              <strong>Protect Your Gadgets and Documents:</strong> Even though the odds of a soggy mishap are low, it never hurts to be cautious. Keep your gadgets and documents in a waterproof bag, just in case.
+            </BodyText>
+            <BodyText>
+              With these essentials in tow, you're all set for an unforgettable expedition!
+            </BodyText>
 
-                </PageBox>
+            <Divider sx={{ my: 4, borderColor: 'divider' }} />
 
+            <SectionTitle variant="h2" sx={{ textAlign: 'center' }}>
+              Are you ready for the tour of a lifetime?
+            </SectionTitle>
+            <BodyText sx={{ textAlign: 'center' }}>
+              If you are, send us a message or connect with us through our social accounts below.
+            </BodyText>
+          </Container>
+        </ContentSection>
 
-            </SimpleContainer>
-            <SimpleContainer><ContactUs></ContactUs></SimpleContainer>
-            <SimpleContainer><Footer></Footer></SimpleContainer>
-            <SimpleContainer><FeaturedItems ></FeaturedItems></SimpleContainer>
+        {/* Other Services */}
+        <Box sx={{ backgroundColor: '#F5F5F5', py: { xs: 8, md: 12 } }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                textAlign: 'center',
+                mb: 6,
+              }}
+            >
+              SEE MORE OF OUR SERVICES
+            </Typography>
+            <ServicesSection config={servicesConfig} hiddenItem={0} />
+          </Container>
+        </Box>
 
-            <SimpleContainer>
-                <PageBox maxWidth='sm' sx={{ textAlign: 'center', paddingTop: '0', justifyContent: 'start' }}>
-                    <h2>SEE MORE OF OUR SERVICES</h2>
-                        <ServicesStack hiddenItem={0} />
-                </PageBox>
-            </SimpleContainer>
-        </PageContainer>
-    );
+        {/* Footer */}
+        <FooterSection config={footerConfig} />
+      </PageContainer>
+    </main>
+  );
 }
