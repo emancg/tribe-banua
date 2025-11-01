@@ -14,13 +14,13 @@ export const footerConfig = {
       icon: "Facebook",
       type: "social",
       label: "@facebook_page",
-      href: "https://facebook.com/tribebanua"
+      href: "https://web.facebook.com/p/Tribe-Banua-100090814745352/?_rdc=1&_rdr#"
     },
     {
       icon: "Instagram",
       type: "social",
       label: "@instagram_page",
-      href: "https://instagram.com/tribebanua"
+      href: "https://www.instagram.com/tribebanua/"
     },
     {
       icon: "Phone",
