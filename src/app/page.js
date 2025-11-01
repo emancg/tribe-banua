@@ -1,53 +1,64 @@
 'use client';
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import { styled } from '@mui/material/styles';
+import MuiContainer from '@mui/material/Container';
 
-import SimpleContainer from "./ui/layout/container";
-import HeroBox from "./ui/sections/heroBox";
-import ServicesImageList from "./ui/sections/servicesImageList";
-import WhyChooseUs from "./ui/sections/whyChooseUsGrid";
-import ContactUs from "./ui/sections/contactUs";
-import Footer from "./ui/sections/footer";
-import Container from '@mui/material/Container';
+// Import new components from lib
+import {
+  Container,
+  HeroSection,
+  ServicesSection,
+  GridSection,
+  FooterSection,
+} from '@/lib/components';
 
-const PageContainer = styled(Container)(({ theme }) => ({
+// Import page configuration
+import { homePageConfig } from '../../content/pages/home.config';
+
+// Styled page container with background
+const PageContainer = styled(MuiContainer)(({ theme, config }) => ({
   padding: 0,
   width: '100%',
   justifyContent: 'center',
-  backgroundImage: `url('./app-bg.jpg')`,
-  // backgroundBlendMode:'darken',
-  // backgroundColor: '#214675',
+  backgroundImage: config?.background?.image
+    ? `url('${config.background.image}')`
+    : 'none',
   backgroundSize: 'cover',
-  padding: 0,
 }));
 
-
 export default function Home() {
+  // Map section types to components
+  const sectionComponents = {
+    hero: HeroSection,
+    services: ServicesSection,
+    whyChooseUs: GridSection,
+    footer: FooterSection,
+  };
+
   return (
     <main>
-      <PageContainer maxWidth='xl'>
-        <SimpleContainer id="hero-container">
-          <HeroBox />
-        </SimpleContainer>
-        <SimpleContainer>
-          <ServicesImageList />
-        </SimpleContainer>
+      <PageContainer maxWidth="xl" config={homePageConfig}>
+        {homePageConfig.sections.map((section, index) => {
+          const SectionComponent = sectionComponents[section.type];
 
-        <SimpleContainer sx={{ height: '100vh' }}>
-          <WhyChooseUs/>
-        </SimpleContainer>
+          if (!SectionComponent) {
+            console.warn(`Unknown section type: ${section.type}`);
+            return null;
+          }
 
-        {/* <SimpleContainer sx={{ height: '100vh' }}>
-          <ContactUs />
-        </SimpleContainer> */}
-
-        <SimpleContainer sx={{ height: '100vh' }}>
-          <Footer />
-        </SimpleContainer>
+          return (
+            <Container
+              key={index}
+              id={section.id}
+              disableGutters
+              maxWidth={false}
+              sx={section.containerProps?.sx || {}}
+            >
+              <SectionComponent config={section.config} />
+            </Container>
+          );
+        })}
       </PageContainer>
-
-      {/* <SimpleContainer><Footer /></SimpleContainer> */}
     </main>
   );
 }
