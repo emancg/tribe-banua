@@ -1,23 +1,48 @@
 {
   "name": "tribe-banua",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A comprehensive Next.js + MUI boilerplate with 60+ components, dark mode, and config-driven architecture",
   "private": true,
+  "author": "Tribe Banua",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/tribe-banua.git"
+  },
+  "keywords": [
+    "nextjs",
+    "mui",
+    "material-ui",
+    "boilerplate",
+    "template",
+    "dark-mode",
+    "seo",
+    "react",
+    "typescript-ready"
+  ],
   "scripts": {
     "dev": "next dev",
+    "dev:3002": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^5.2.2",
     "@mui/icons-material": "^5.15.14",
     "@mui/material-nextjs": "^5.15.11",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-social-media-embed": "^2.5.9"
+    "react-hook-form": "^7.66.0",
+    "react-social-media-embed": "^2.5.9",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "eslint": "^8",
