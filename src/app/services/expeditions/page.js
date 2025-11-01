@@ -103,7 +103,7 @@ export default function ExpeditionsPage() {
               This expedition is packed with adventure and fun experiences! For your reference, see the itinerary below.
             </BodyText>
             <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-              <Link target="_blank" href="/expedition-activities.png">
+              <Link target="_blank" href="/expeditions/expedition-activities.png">
                 <Box sx={{
                   maxWidth: '360px',
                   border: '1px solid',
@@ -114,7 +114,7 @@ export default function ExpeditionsPage() {
                   <Image
                     height={900}
                     width={360}
-                    src="/expedition-activities.png"
+                    src="/expeditions/expedition-activities.png"
                     alt="expedition activities"
                     style={{ width: '100%', height: 'auto' }}
                   />
