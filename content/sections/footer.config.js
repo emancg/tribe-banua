@@ -11,25 +11,25 @@ export const footerConfig = {
   },
   contactInfo: [
     {
-      icon: "FacebookIcon",
+      icon: "Facebook",
       type: "social",
       label: "@facebook_page",
       href: "https://facebook.com/tribebanua"
     },
     {
-      icon: "InstagramIcon",
+      icon: "Instagram",
       type: "social",
       label: "@instagram_page",
       href: "https://instagram.com/tribebanua"
     },
     {
-      icon: "PhoneIcon",
+      icon: "Phone",
       type: "contact",
       label: "+63 9XX-XXX-XXXX",
       href: "tel:+639XXXXXXXX"
     },
     {
-      icon: "EmailIcon",
+      icon: "Email",
       type: "contact",
       label: "tribebanuaexpeditions@gmail.com",
       href: "mailto:tribebanuaexpeditions@gmail.com"

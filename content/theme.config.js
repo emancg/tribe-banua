@@ -9,7 +9,7 @@ export const themeConfig = {
   brand: {
     name: "Tribe Banua",
     logo: {
-      icon: "SailingIcon",
+      icon: "Sailing",
       text: "TRIBE BANUA"
     }
   },
