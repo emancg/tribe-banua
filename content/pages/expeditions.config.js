@@ -6,7 +6,7 @@ export const expeditionsPageConfig = {
   title: "EXPEDITIONS",
   slug: "expeditions",
   background: {
-    image: "/expeditions-bg.jpg"
+    image: "/expeditions/expeditions-bg.jpg"
   },
   content: {
     sections: [
@@ -18,11 +18,11 @@ export const expeditionsPageConfig = {
         heading: "What to expect from this grand tour?",
         text: "This expedition is packed with adventure and fun experiences! For your reference, see the itinerary below.",
         image: {
-          src: "/expedition-activities.png",
+          src: "/expeditions/expedition-activities.png",
           alt: "expedition activities",
           width: 360,
           height: 900,
-          link: "/expedition-activities.png"
+          link: "/expeditions/expedition-activities.png"
         }
       },
       {

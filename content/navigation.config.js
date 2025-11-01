@@ -18,11 +18,6 @@ export const navigationConfig = {
       type: 'page'
     },
     {
-      label: 'Expeditions',
-      href: '/expeditions',
-      type: 'page'
-    },
-    {
       label: 'Services',
       href: '/#services-section',
       type: 'section'
